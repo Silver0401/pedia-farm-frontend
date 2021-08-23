@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Paytone+One&display=swap");
+
+@import "./functions";
+
+:root {
+  --SitePrimaryColor: #ededf0;
+  --SiteSecondaryColor: #1c72bc;
+  --SiteTertiaryColor: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+body,
+html {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--SitePrimaryColor) !important;
+}
+
+.App {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  .GlobalNav {
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    top: 0;
+    background-color: transparent;
+    @include alignCenter();
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: transparent;
+
+    .logo {
+      z-index: 3;
+      position: relative;
+      margin-left: -40px;
+      display: none;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background-color: var(--SiteSecondaryColor);
+
+      @include alignCenter();
+      svg,
+      img {
+        margin-top: 15%;
+        margin-left: 15%;
+        width: 40%;
+        height: 40%;
+      }
+    }
+  }
+
+  .HomePage {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--SitePrimaryColor);
+    overflow: visible;
+
+    @include alignCenter;
+    flex-direction: row;
+
+    .HomeLeftBox {
+      position: relative;
+      z-index: 1;
+      width: 50%;
+      height: 100%;
+      @include alignCenter;
+      flex-direction: column;
+
+      .lottieBox {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        @include alignCenter;
+
+        svg {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+    .HomeRightBox {
+      z-index: 1;
+      position: relative;
+      width: 50%;
+      height: 100%;
+      @include alignCenter();
+      background-color: transparent;
+
+      .TitlesBox,
+      .ButtonsBox {
+        width: 90%;
+        height: 40%;
+        z-index: 1;
+        @include alignCenter();
+      }
+
+      .TitlesBox {
+        h1,
+        h2,
+        h3 {
+          color: var(--SitePrimaryColor);
+          margin: 10px 0px;
+          text-align: center;
+        }
+        h2 {
+          font-size: 1.8rem;
+        }
+
+        h1 {
+          font-size: 4.5rem;
+          font-family: "Paytone One", sans-serif;
+        }
+
+        h3 {
+          // padding-right: 3%;
+          color: var(--SiteTertiaryColor);
+          // text-decoration: underline 1px solid var(--SiteSecondaryColor);
+          font-size: 1.3rem;
+        }
+      }
+
+      .ButtonsBox {
+        @include alignCenter();
+        width: 70%;
+        height: 30%;
+        flex-direction: row;
+        justify-content: space-around;
+
+        // button {
+        //   width: 170px;
+        //   height: 60px;
+        //   border-radius: 10px;
+        //   cursor: pointer;
+        //   font-size: 1rem;
+        //   color: var(--SiteTertiaryColor);
+        //   background-color: transparent;
+        //   border: 2px solid var(--SiteSecondaryColor);
+        //   -webkit-text-stroke: 1px var(--SiteTertiaryColor);
+        // }
+      }
+    }
+
+    .bg {
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      z-index: 0;
+      @include alignCenter();
+      flex-direction: row;
+      // justify-content: flex-end;
+      // background-color: turquoise;
+
+      .custom-shape-divider-top-1629405038 {
+        z-index: 0;
+        position: absolute;
+        // top: 38.5%;
+        // left: 50%;
+        width: 100vh;
+        // border: 2px solid lightcoral;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(270deg);
+      }
+
+      .custom-shape-divider-top-1629405038 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 181px;
+      }
+
+      .custom-shape-divider-top-1629405038 .shape-fill {
+        fill: #1c72bc;
+      }
+
+      .colorBox {
+        position: relative;
+        margin-left: auto;
+        width: 44%;
+        height: 100%;
+        background-color: var(--SiteSecondaryColor);
+      }
+    }
+  }
+
+  .MedsPage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    @include alignCenter;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .SearchBar {
+      position: relative;
+      width: 100%;
+      height: 70px;
+      background-color: var(--SiteSecondaryColor);
+      @include alignCenter;
+
+      .innerBar {
+        position: relative;
+        height: 60%;
+        width: 50%;
+        border-radius: 10px;
+        background-color: var(--SitePrimaryColor);
+        @include alignCenter;
+
+        input {
+          width: 100%;
+          height: 100%;
+          outline: none;
+          padding: 2%;
+          border-radius: 10px;
+        }
+
+        .svgBox {
+          right: 5%;
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          @include alignCenter;
+
+          svg {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+    .FetchedMedsDisplay {
+      position: relative;
+      width: #{"max(60%, 300px)"};
+      height: calc(100% - 70px);
+      border: 2px solid var(--SiteSecondaryColor);
+
+      .MedContainer {
+        position: relative;
+        border: 2px solid black;
+
+        > * {
+          margin-left: 5%;
+        }
+      }
+    }
+  }
+}
