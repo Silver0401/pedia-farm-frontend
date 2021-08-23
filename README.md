@@ -1,3 +1,3 @@
-# Daniel Salas Personal Web Portafolio
+# Pedia-Farm Site Code
 
-Portafolio designed and developed by Ismael M.C. throught smortMC2 tech company
+Pedia-Farm medicine project code info
