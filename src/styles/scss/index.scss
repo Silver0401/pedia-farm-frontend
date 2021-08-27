@@ -7,6 +7,10 @@
   --SitePrimaryColor: #ededf0;
   --SiteSecondaryColor: #1c72bc;
   --SiteTertiaryColor: #000000;
+
+  --HighRiskColor: #e42c2ca7;
+  --MediumRiskColor: #fa8a12a7;
+  --LowRiskColor: #0efa2290;
 }
 
 * {
@@ -247,15 +251,139 @@ html {
     .FetchedMedsDisplay {
       position: relative;
       width: #{"max(60%, 300px)"};
-      height: calc(100% - 70px);
-      border: 2px solid var(--SiteSecondaryColor);
+      margin-top: 70px;
+      height: calc(100% - 140px);
+      overflow-y: scroll;
+      overflow-x: hidden;
 
       .MedContainer {
+        margin: 5px 0px;
         position: relative;
-        border: 2px solid black;
+        padding: 10px;
+        border: 2px solid darkslategrey;
 
         > * {
-          margin-left: 5%;
+          margin: 5px 5%;
+        }
+
+        Button {
+          margin-top: 15px;
+        }
+
+        .MedInfo {
+          overflow-y: scroll;
+          overflow-x: hidden;
+
+          > * {
+            position: relative;
+            font-weight: bolder;
+          }
+
+          h2 {
+            font-size: 1.2rem;
+            text-decoration: underline 3px var(--SiteSecondaryColor);
+          }
+
+          h3 {
+            font-size: 1.15rem;
+          }
+
+          .AdverseEffectsList {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 5px;
+
+            li {
+              position: relative;
+              flex: 1 1 150px;
+              min-height: 60px;
+
+              > * {
+                position: absolute;
+                font-size: 0.9rem;
+                width: 100%;
+                height: 100%;
+                @include alignCenter;
+              }
+
+              #key {
+                &:hover {
+                  + #value {
+                    opacity: 1;
+                    transition: opacity 500ms;
+                  }
+                }
+              }
+              #value {
+                width: 100%;
+                height: 100%;
+                padding: 0px 10%;
+                opacity: 0;
+                @include alignCenter();
+                background-color: white;
+                pointer-events: none;
+                transition: opacity 500ms;
+                font-size: 0.7rem;
+              }
+            }
+          }
+
+          .RelativeMedsList {
+            position: relative;
+            width: 100%;
+            @include alignCenter;
+            gap: 30px;
+
+            li {
+              position: relative;
+              width: 100%;
+
+              h4 {
+                margin: 10px 0px;
+              }
+
+              .RelativeMedsBox {
+                position: relative;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px;
+
+                div {
+                  flex: 1 1 150px;
+                  min-height: 50px;
+                  background-color: var(--SiteSecondaryColor);
+                  @include alignCenter;
+                  color: white;
+                  font-size: 0.8rem;
+                }
+              }
+            }
+          }
+        }
+
+        .MedInfo::before {
+          top: 45px;
+          left: 2%;
+          content: "";
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          background-color: var(--SiteTertiaryColor);
+          border-radius: 50%;
+        }
+
+        .arrow {
+          top: 40px;
+          right: 2.5%;
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          border-top: 10px solid var(--SiteTertiaryColor);
         }
       }
     }

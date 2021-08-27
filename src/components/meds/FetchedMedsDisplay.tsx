@@ -1,8 +1,14 @@
 import axios from "axios";
 import React, { SetStateAction, useEffect, useState } from "react";
+import { Button } from "@chakra-ui/button";
+import { buttonProps } from "../../data/types";
 
 const FetchedMedsDisplay: React.FC = () => {
   const [FetchedData, setFetchedData] = useState<any>();
+  const [buttonState, setButtonState] = useState<buttonProps>({
+    state: false,
+    MedName: "awaiting",
+  });
 
   useEffect(() => {
     axios
@@ -18,25 +24,91 @@ const FetchedMedsDisplay: React.FC = () => {
         FetchedData!.map((med: any) => {
           return (
             <div className="MedContainer" key={med._id}>
-              <h1>{med.MedName}</h1>
-              <br />
-              <p>{med.TherapeuticUse}</p>
-              <br />
-              <ul>
+              <Button
+                onClick={() => {
+                  setButtonState({
+                    state: buttonState.state ? false : true,
+                    MedName: med.MedName,
+                  });
+                  console.log(med.MedName === buttonState.MedName);
+                  console.log(buttonState.state);
+                }}
+                size="lg"
+                colorScheme="facebook"
+              >
+                {med.MedName} 💊
+              </Button>
+
+              <div
+                style={{
+                  transform:
+                    buttonState.MedName === med.MedName &&
+                    buttonState.state === true
+                      ? "rotate(0deg)"
+                      : "rotate(180deg)",
+                }}
+                className="arrow"
+              />
+
+              <div
+                style={{
+                  height:
+                    buttonState.MedName === med.MedName &&
+                    buttonState.state === true
+                      ? "500px"
+                      : "0px",
+                  transition: "height 500ms",
+                }}
+                className="MedInfo"
+              >
+                <br />
+                <h3>{med.TherapeuticUse}</h3>
+                <br />
+
                 <h2>Efectos Adversos</h2>
                 <br />
-                {med.AdverseEffects.map((adverseEffect: string) => {
-                  return <li key={adverseEffect}>{adverseEffect}</li>;
-                })}
-              </ul>
-              <ul>
+                <ul className="AdverseEffectsList">
+                  {Object.keys(med.AdverseEffects).map((key) => {
+                    return (
+                      <li
+                        key={key}
+                        style={{
+                          border:
+                            med.AdverseEffects[key][1] === "alto"
+                              ? "2px solid #e42c2ca7"
+                              : med.AdverseEffects[key][1] === "medio"
+                              ? "2px solid #fa8a12a7"
+                              : med.AdverseEffects[key][1] === "bajo"
+                              ? "2px solid #0efa2290"
+                              : "2px solid white",
+                        }}
+                      >
+                        <p id="key">{key}</p>
+                        {med.AdverseEffects[key][0] ? (
+                          <p id="value">{med.AdverseEffects[key][0]}</p>
+                        ) : null}
+                      </li>
+                    );
+                  })}
+                </ul>
                 <br />
-                <h2>Dosificaciones</h2>
+                <h2>Intreacción con otros Medicamentos</h2>
                 <br />
-                {med.Dosification.map((dose: string) => {
-                  return <li key={dose}>{dose}</li>;
-                })}
-              </ul>
+                <ul className="RelativeMedsList">
+                  {Object.keys(med.RelativeMeds).map((key) => {
+                    return (
+                      <li key={key}>
+                        <h4>{key}</h4>
+                        <div className="RelativeMedsBox">
+                          {med.RelativeMeds[key].map((relativeMed: string) => {
+                            return <div key={relativeMed}>{relativeMed}</div>;
+                          })}
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             </div>
           );
         })

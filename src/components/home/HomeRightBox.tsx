@@ -39,7 +39,7 @@ const HomeRightBox: React.FC = () => {
           colorScheme="twitter"
           onClick={() => History.push("/MedsDB")}
         >
-          Ir al Catálogo Pediátrico 💊
+          Ir al Catálogo Pediátrico ⚕️
         </Button>
       </div>
     </motion.div>

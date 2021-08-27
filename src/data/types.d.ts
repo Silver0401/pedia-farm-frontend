@@ -8,3 +8,8 @@ export interface contextProps {
 	contextData: contextData
 	setContextData: (data: contextData) => void
 }
+
+export interface buttonProps {
+	state: boolean
+	MedName: string
+}
