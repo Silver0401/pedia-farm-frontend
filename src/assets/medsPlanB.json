@@ -18,25 +18,96 @@
 		"Furosemida Disminuye Efecto de": ["antidiabéticos", "Simpatomimeticos con efecto hipertensor"]
 		}
 	},
-	
+
 	"med2": {
-	"MedName": "Enalapril",
-	"TherapeuticUse": "IECA: Inhibidor de la enzima convertidora de angiotensina, se utiliza para reducir la liberación de orina (diurésis) para mantener líquidos",
-	"AdverseEffects": {
-		"Tos Seca": [false, "bajo"],
-		"Hiperpotasemia": ["potasio alto", "medio"],
-		"Fatiga": ["Falta de energía y motivación", "bajo"],
-		"Mareos": [false, "bajo"],
-		"Dolores de Cabeza": [false, "medio"],
-		"Pérdida del Sentido del Gusto": [false, "bajo"],		
-		"Angioedemas": ["Inflamación indolora por debajo de la piel", "bajo"]	
+		"MedName": "Enalapril",
+		"TherapeuticUse": "IECA: Inhibidor de la enzima convertidora de angiotensina, se utiliza para reducir la liberación de orina (diurésis) para mantener líquidos",
+		"AdverseEffects": {
+			"Tos Seca": [false, "bajo"],
+			"Hiperpotasemia": ["potasio alto", "medio"],
+			"Fatiga": ["Falta de energía y motivación", "bajo"],
+			"Mareos": [false, "bajo"],
+			"Dolores de Cabeza": [false, "medio"],
+			"Pérdida del Sentido del Gusto": [false, "bajo"],		
+			"Angioedemas": ["Inflamación indolora por debajo de la piel", "bajo"]	
+		},
+		"RelativeMeds" : {
+		"Disminuyen efecto de Enalapril": ["antiácidos", "antiinflamatorios"],
+		"Aumentan efecto de Enalapril": ["diuréticos", "suplementos con potasio alto", "IECAs"],
+		"Enalapril aumenta concentraciones de": ["digoxina", "litio"]
+		}
 	},
-	"RelativeMeds" : {
-	"Disminuyen efecto de Enalapril": ["antiácidos", "antiinflamatorios"],
-	"Aumentan efecto de Enalapril": ["diuréticos", "suplementos con potasio alto", "IECAs"],
-	"Enalapril aumenta concentraciones de": ["digoxina", "litio"]
+
+	"med4": {
+		"MedName": "Levosimendan",
+		"TherapeuticUse": "Inodilatador: aumenta la fuerza y velocidad del corazón",
+		"AdverseEffects": {
+			"Vértigo": ["sensación de mareo", "alto"],
+			"Tquicardia": ["Frecuencia cardiaca elevada", "medio"],
+			"Dolor de Cabeza": [false, "medio"],
+			"Nauseas y Vomito": [false, "bajo"],
+			"Hipopotasemia": ["Niveles de potasio bajos", "medio"],
+			"Extrasístoles": ["ritmo cardiaco alterado (prematuro)", "alto"],
+			"Fibrilación Ventricular": ["ritmo cardiaco rápido y anormal","alto"]
+		},
+		"RelativeMeds" : {
+		"Carvedilol Aumenta Riesgo de Hipotensión con": ["isosorbida"],
+		"Además de lo anterior no se han visto más interacciones con otros medicamentos": []
+		}
+	},
+
+	"med5": {
+		"MedName": "Ibuprofeno",
+		"TherapeuticUse": "Antiinflamatorio y Antipirético: disminuye la inflamación y la fiebre",
+		"AdverseEffects": {
+			"Trombocitopenia": ["disminución de plaquetas", "medio"],
+			"Hemorragia pulmonar": ["sangrado en pulmones", "alto"],
+			"Oliguria": ["baja producción de orina", "bajo"],
+			"Anemia": ["niveles bajos de globulos rojos", "alto"],
+			"Leucomalacia Periventricular": ["tipo de lesión cerebral", "alto"],
+			"Hipernatremia": ["niveles de sodio bajos", "medio"]
+		},
+		"RelativeMeds" : {
+		"Ibuprofeno puede reducir el efecto de": ["hipoglucemiantes orales", "warfarina", "furosemida", "tiazidas", "beta bloqueadores", "prazosina", "captopril"]
+		}
+	},
+
+	"med6": {
+		"MedName": "Indometacina",
+		"TherapeuticUse": "Antiinflamatorio: alivio de dolor, fiebre e inflamación",
+		"AdverseEffects": {
+			"Dolor de Cabeza": [false, "medio"],
+			"Nauseas y Vomito": [false, "bajo"],
+			"Diarrea": [false, "bajo"],
+			"Tinnitus": ["zumbido en los oídos", "medio"],
+			"Fiebre": [false, "medio"],
+			"Sarpullido": ["Ronchas enrojecidas que pican", "medio"],
+			"Palidez": [false, "bajo"],
+			"Ictericia": ["coloración amarilla de ojos y piel", "alto"]
+		},
+		"RelativeMeds" : {
+		"Reducen niveles de Indometacina": ["Diflusinal", "Ácido acetilsalicílico"],
+		"Aumentan niveles de Indometacina": ["Probenecid", "Digoxina"],		
+		"Indiomectacina puede causar Toxicidad con": ["Metotrexato", "AINEs", "Ciclosporina"]			
+		}
+	},
+
+	"med7": {
+		"MedName": "Paracetamol",
+		"TherapeuticUse": "Analgésico y Antipirético: disminuye el dolor y la fiebre",
+		"AdverseEffects": {
+			"Sarpullido": ["Ronchas enrojecidas que pican", "medio"],
+			"Trombocitopenia": ["Disminución de plaquetas", "medio"],
+			"Hipoglucemia": ["Nivles de azúcar bajos", "bajo"],
+			"Hiptensión": ["Presión arterial baja", "bajo"],
+			"Ictericia": ["coloración amarilla de ojos y piel", "alto"]
+		},
+		"RelativeMeds" : {
+		"Paracetamol puede causar Toxicidad con": ["Carbamacepina", "isoniacida", "zidovudina"],
+		"Aumentan concentración de Paracetamol": ["diflunisal"],
+		"Paracetamol altera concentración de": ["cloranfenicol"]	
+		}
 	}
-}
 
 }
 
