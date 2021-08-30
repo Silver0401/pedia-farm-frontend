@@ -61,7 +61,8 @@ const FetchedMedsDisplay: React.FC<fetchedMedsProps> = ({ input }) => {
                   size="lg"
                   colorScheme="facebook"
                 >
-                  {med.MedName} 💊
+                  {med.MedName.charAt(0).toUpperCase() + med.MedName.slice(1)}{" "}
+                  💊
                 </Button>
 
                 <div

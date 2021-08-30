@@ -4,6 +4,7 @@ import { input } from "../data/types";
 
 import FetchedMedsDisplay from "../components/meds/FetchedMedsDisplay";
 import SearchBar from "./../components/meds/SearchBar";
+import RiskBox from "../components/meds/RiskBox";
 
 const Meds: React.FC = () => {
   const [searchBarData, setSearchBarData] = useState<input>(null);
@@ -30,6 +31,7 @@ const Meds: React.FC = () => {
     >
       <SearchBar input={(data) => setSearchBarData(data)} />
       <FetchedMedsDisplay input={searchBarData} />
+      <RiskBox />
     </motion.div>
   );
 };

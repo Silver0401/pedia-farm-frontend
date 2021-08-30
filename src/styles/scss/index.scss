@@ -255,6 +255,7 @@ html {
       height: calc(100% - 140px);
       overflow-y: scroll;
       overflow-x: hidden;
+      margin-right: 25%;
 
       .MedContainer {
         margin: 5px 0px;
@@ -398,6 +399,58 @@ html {
           border-right: 10px solid transparent;
           border-top: 10px solid var(--SiteTertiaryColor);
         }
+      }
+    }
+    .RiskBox {
+      position: absolute;
+      top: 69px;
+      right: 20px;
+      width: 350px;
+      height: 60%;
+      border: 1px solid var(--SiteTertiaryColor);
+      @include alignCenter;
+      flex-direction: column;
+      justify-content: space-around;
+      // align-items: flex-start;
+
+      h2,
+      p {
+        font-weight: bolder;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        position: relative;
+      }
+
+      p::before {
+        position: absolute;
+        top: 30%;
+        left: -20px;
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: var(--HighRiskColor);
+      }
+
+      #mr {
+        &::before {
+          background-color: var(--MediumRiskColor);
+        }
+      }
+      #lr {
+        &::before {
+          background-color: var(--LowRiskColor);
+        }
+      }
+
+      label {
+        padding: 0px 10px;
+        text-align: justify;
       }
     }
   }
