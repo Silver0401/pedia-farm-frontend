@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { input } from "../data/types";
 
 import FetchedMedsDisplay from "../components/meds/FetchedMedsDisplay";
 import SearchBar from "./../components/meds/SearchBar";
 
-const meds: React.FC = () => {
+const Meds: React.FC = () => {
+  const [searchBarData, setSearchBarData] = useState<input>(null);
+
   const MotionTransitionVariants = {
     initPosition: {
       opacity: 0,
@@ -25,10 +28,10 @@ const meds: React.FC = () => {
       animate={"DesiredPosition"}
       exit={"ExitPosition"}
     >
-      <SearchBar />
-      <FetchedMedsDisplay />
+      <SearchBar input={(data) => setSearchBarData(data)} />
+      <FetchedMedsDisplay input={searchBarData} />
     </motion.div>
   );
 };
 
-export default meds;
+export default Meds;

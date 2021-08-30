@@ -1,10 +1,19 @@
 import React from "react";
+import { searchBarProps } from "../../data/types";
 
-const SearchBar: React.FC = () => {
+const SearchBar: React.FC<searchBarProps> = ({ input }) => {
   return (
     <div className="SearchBar">
       <div className="innerBar">
-        <input type="text" placeholder="Busca una enfermedad o medicamento" />
+        <input
+          onChange={(e) =>
+            e.target.value === ""
+              ? input(null)
+              : input(e.target.value.toLowerCase())
+          }
+          type="text"
+          placeholder="Busca una enfermedad o medicamento"
+        />
 
         <div className="svgBox">
           <svg

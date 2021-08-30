@@ -1,5 +1,7 @@
 type Page = "Home" | "About" | "Contact" | "awaiting" 
 
+export type input = string | null
+
 export interface contextData {
 	currentPage: Page
 }
@@ -12,4 +14,12 @@ export interface contextProps {
 export interface buttonProps {
 	state: boolean
 	MedName: string
+}
+
+export interface searchBarProps {
+	input: (data: input) => void
+}
+
+export interface fetchedMedsProps {
+	input: input
 }
