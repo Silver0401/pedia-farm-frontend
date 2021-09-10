@@ -41,6 +41,13 @@ const HomeRightBox: React.FC = () => {
         >
           Ir al Catálogo Pediátrico ⚕️
         </Button>
+        <Button
+          size="lg"
+          colorScheme="teal"
+          onClick={() => History.push("/Pusher")}
+        >
+          Añadir Fármacos 📇
+        </Button>
       </div>
     </motion.div>
   );

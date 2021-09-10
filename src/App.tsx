@@ -5,6 +5,7 @@ import { AnimatePresence } from "framer-motion";
 
 import HomePage from "./pages/home";
 import MedsPage from "./pages/meds";
+import PusherPage from "./pages/pusher";
 import GlobalNav from "./components/nav";
 
 const App: React.FC = () => {
@@ -22,6 +23,7 @@ const App: React.FC = () => {
         <Switch location={Location} key={Location.pathname}>
           <Route key="HomePage" exact path="/" component={HomePage} />
           <Route key="MedsPage" exact path="/MedsDB" component={MedsPage} />
+          <Route key="PusherPage" exact path="/Pusher" component={PusherPage} />
         </Switch>
       </AnimatePresence>
     </div>

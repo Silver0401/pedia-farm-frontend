@@ -156,7 +156,7 @@ const FetchedMedsDisplay: React.FC<fetchedMedsProps> = ({ input }) => {
         })
       ) : (
         <div className="loaderContainer">
-          <div>loading...</div>
+          <h4>Loading...</h4>
           <div className="spinner" />
         </div>
       )}

@@ -3,6 +3,15 @@
 
 @import "./functions";
 
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 :root {
   --SitePrimaryColor: #ededf0;
   --SiteSecondaryColor: #1c72bc;
@@ -49,8 +58,8 @@ html {
       position: relative;
       margin-left: -40px;
       display: none;
-      width: clamp(110px, 4vw, 140px);
-      height: clamp(110px, 4vw, 140px);
+      width: clamp(90px, 10vw, 140px);
+      height: clamp(90px, 10vw, 140px);
       border-radius: 50%;
       background-color: var(--SiteSecondaryColor);
       border: 1px solid var(--SitePrimaryColor);
@@ -140,11 +149,11 @@ html {
         @include alignCenter();
         width: 70%;
         height: 30%;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-around;
 
         Button {
-          font-size: clamp(0.9rem, 2vw, 2rem);
+          font-size: clamp(0.9rem, 2vw, 1.2rem);
         }
 
         // button {
@@ -434,6 +443,29 @@ html {
           border-top: 10px solid var(--SiteTertiaryColor);
         }
       }
+
+      .loaderContainer {
+        width: 100%;
+        height: 100%;
+        @include alignCenter;
+
+        h4 {
+          font-size: clamp(1rem, 4vw, 2.5rem);
+        }
+
+        .spinner {
+          width: 80px;
+          height: 80px;
+          margin-top: 5%;
+          margin-bottom: 10%;
+          border-radius: 50%;
+          border-left: 5px solid var(--SiteSecondaryColor);
+          border-right: 5px solid var(--SiteSecondaryColor);
+          border-top: 5px solid var(--SiteSecondaryColor);
+          border-bottom: 5px solid transparent;
+          animation: rotate 1s linear infinite;
+        }
+      }
     }
     .RiskBox {
       position: absolute;
@@ -485,6 +517,54 @@ html {
       label {
         padding: 0px 10px;
         text-align: justify;
+      }
+    }
+  }
+
+  .PusherPage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--SitePrimaryColor);
+    @include alignCenter;
+
+    form {
+      position: relative;
+      height: 100%;
+      width: 40%;
+      border: 2px solid black;
+      overflow: scroll;
+
+      div {
+        margin: 15px 0px;
+        position: relative;
+        @include alignCenter;
+        justify-content: space-evenly;
+        flex-direction: column;
+        border: 2px solid lightgreen;
+        height: 100px;
+      }
+
+      .listInputs {
+        height: 500px;
+        position: relative;
+        border: 2px solid lightblue;
+
+        span {
+          position: relative;
+          width: 100%;
+          height: 200px;
+          border: 2px solid lightcoral;
+          @include alignCenter;
+          flex-direction: column;
+          justify-content: space-evenly;
+
+          .removeButton {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+          }
+        }
       }
     }
   }
