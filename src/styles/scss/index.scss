@@ -49,10 +49,11 @@ html {
       position: relative;
       margin-left: -40px;
       display: none;
-      width: 140px;
-      height: 140px;
+      width: clamp(110px, 4vw, 140px);
+      height: clamp(110px, 4vw, 140px);
       border-radius: 50%;
       background-color: var(--SiteSecondaryColor);
+      border: 1px solid var(--SitePrimaryColor);
 
       @include alignCenter();
       svg,
@@ -121,19 +122,17 @@ html {
           text-align: center;
         }
         h2 {
-          font-size: 1.8rem;
+          font-size: clamp(1rem, 4vw, 1.8rem);
         }
 
         h1 {
-          font-size: 4.5rem;
+          font-size: clamp(2rem, 10vw, 4.5rem);
           font-family: "Paytone One", sans-serif;
         }
 
         h3 {
-          // padding-right: 3%;
           color: var(--SiteTertiaryColor);
-          // text-decoration: underline 1px solid var(--SiteSecondaryColor);
-          font-size: 1.3rem;
+          font-size: clamp(0.9rem, 2vw, 1.3rem);
         }
       }
 
@@ -143,6 +142,10 @@ html {
         height: 30%;
         flex-direction: row;
         justify-content: space-around;
+
+        Button {
+          font-size: clamp(0.9rem, 2vw, 2rem);
+        }
 
         // button {
         //   width: 170px;
@@ -173,10 +176,7 @@ html {
       .custom-shape-divider-top-1629405038 {
         z-index: 0;
         position: absolute;
-        // top: 38.5%;
-        // left: 50%;
         width: 100vh;
-        // border: 2px solid lightcoral;
         overflow: hidden;
         line-height: 0;
         transform: rotate(270deg);
@@ -217,6 +217,8 @@ html {
       height: 70px;
       background-color: var(--SiteSecondaryColor);
       @include alignCenter;
+      flex-direction: row;
+      justify-content: space-around;
 
       .innerBar {
         position: relative;
@@ -227,11 +229,15 @@ html {
         @include alignCenter;
 
         input {
-          width: 100%;
+          margin-right: auto;
+          width: 85%;
           height: 100%;
           outline: none;
           padding: 2%;
           border-radius: 10px;
+          font-size: clamp(0.8rem, 2vw, 1rem);
+          text-overflow: ellipsis;
+          white-space: nowrap;
         }
 
         .svgBox {
@@ -244,6 +250,34 @@ html {
           svg {
             width: 100%;
             height: 100%;
+          }
+        }
+      }
+
+      .arrowButton {
+        height: 50px;
+        width: 50px;
+        @include alignCenter;
+        cursor: pointer;
+        background-color: var(--SitePrimaryColor);
+        border-radius: 50%;
+        transition: background-color 500ms;
+        display: none;
+
+        svg {
+          pointer-events: none;
+          width: 80%;
+          height: auto;
+          transition: fill 500ms;
+        }
+
+        &:hover {
+          transition: background-color 500ms;
+          background-color: var(--SiteTertiaryColor);
+
+          svg {
+            transition: fill 500ms;
+            fill: var(--SitePrimaryColor);
           }
         }
       }
@@ -405,13 +439,13 @@ html {
       position: absolute;
       top: 69px;
       right: 20px;
-      width: 350px;
+      width: #{"min(350px, 100%)"};
       height: 60%;
       border: 1px solid var(--SiteTertiaryColor);
       @include alignCenter;
       flex-direction: column;
       justify-content: space-around;
-      // align-items: flex-start;
+      background-color: var(--SitePrimaryColor);
 
       h2,
       p {
@@ -455,3 +489,5 @@ html {
     }
   }
 }
+
+@import "./mobileOpt";

@@ -1,0 +1,70 @@
+@media (max-width: 1000px) {
+  .App {
+    .HomePage {
+      flex-direction: column-reverse;
+
+      .HomeLeftBox,
+      .HomeRightBox {
+        width: 100%;
+        height: 50%;
+
+        .TitlesBox {
+          height: 70%;
+        }
+
+        .ButtonsBox {
+          height: 30%;
+        }
+      }
+
+      .bg {
+        .custom-shape-divider-top-1629405038 {
+          transform: rotate(180deg);
+          width: 100vw;
+          margin-top: 50px;
+        }
+
+        .colorBox {
+          margin-left: 0;
+          margin-bottom: auto;
+          height: 44%;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .App {
+    .MedsPage {
+      .SearchBar {
+        .innerBar {
+          margin-left: 20%;
+        }
+
+        .arrowButton {
+          display: flex;
+        }
+      }
+
+      .FetchedMedsDisplay {
+        width: 100%;
+        margin-right: 0;
+      }
+
+      .boxToggled {
+        transition: transform 500ms;
+        transform: translateX(20px);
+      }
+      .boxNotToggled {
+        transition: transform 500ms;
+        transform: translateX(400px);
+      }
+
+      .RiskBox {
+        top: 100px;
+      }
+    }
+  }
+}

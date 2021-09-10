@@ -18,8 +18,14 @@ export interface buttonProps {
 
 export interface searchBarProps {
 	input: (data: input) => void
+	buttonState: boolean
+	setButtonState: (state: boolean) => void
 }
 
 export interface fetchedMedsProps {
 	input: input
+}
+
+export interface RiskBoxProps {
+	buttonState: boolean
 }

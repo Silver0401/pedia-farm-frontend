@@ -8,6 +8,7 @@ import RiskBox from "../components/meds/RiskBox";
 
 const Meds: React.FC = () => {
   const [searchBarData, setSearchBarData] = useState<input>(null);
+  const [buttonToggled, setButtonTogled] = useState<boolean>(false);
 
   const MotionTransitionVariants = {
     initPosition: {
@@ -29,9 +30,13 @@ const Meds: React.FC = () => {
       animate={"DesiredPosition"}
       exit={"ExitPosition"}
     >
-      <SearchBar input={(data) => setSearchBarData(data)} />
+      <SearchBar
+        input={(data) => setSearchBarData(data)}
+        buttonState={buttonToggled}
+        setButtonState={(state) => setButtonTogled(state)}
+      />
       <FetchedMedsDisplay input={searchBarData} />
-      <RiskBox />
+      <RiskBox buttonState={buttonToggled} />
     </motion.div>
   );
 };

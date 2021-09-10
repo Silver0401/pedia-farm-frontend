@@ -137,13 +137,6 @@ const FetchedMedsDisplay: React.FC<fetchedMedsProps> = ({ input }) => {
                                         )}`
                                       )
                                     }
-                                    // style={{
-                                    //   backgroundColor: medList.includes(
-                                    //     relativeMed
-                                    //   )
-                                    //     ? "yellow"
-                                    //     : "green",
-                                    // }}
                                     key={relativeMed}
                                   >
                                     {relativeMed}

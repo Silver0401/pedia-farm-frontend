@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "@chakra-ui/button";
+import { RiskBoxProps } from "../../data/types";
 
-const RiskBox: React.FC = () => {
+const RiskBox: React.FC<RiskBoxProps> = ({ buttonState }) => {
+  useEffect(() => {
+    console.log(buttonState);
+  }, [buttonState]);
+
   return (
-    <div className="RiskBox">
+    <div
+      className={buttonState ? "RiskBox boxToggled" : "RiskBox boxNotToggled"}
+    >
       <h2>Clasificación de Riesgos</h2>
       <p id="hr">Riesgo Alto</p>
       <p id="mr">Riesgo Medio</p>
