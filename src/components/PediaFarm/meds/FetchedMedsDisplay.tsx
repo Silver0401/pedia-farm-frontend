@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { SetStateAction, useEffect, useState } from "react";
 import { Button } from "@chakra-ui/button";
-import { buttonProps } from "../../data/types";
-import { fetchedMedsProps } from "../../data/types";
+import { buttonProps } from "../../../data/types";
+import { fetchedMedsProps } from "../../../data/types";
 
 const FetchedMedsDisplay: React.FC<fetchedMedsProps> = ({ input }) => {
   const [FetchedData, setFetchedData] = useState<any>();

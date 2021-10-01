@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from "react";
 import { motion } from "framer-motion";
 
-import HomeLeftBox from "../components/home/HomeLeftBox";
-import HomeRightBox from "../components/home/HomeRightBox";
-import { Context } from "../data/context";
+import HomeLeftBox from "./../../components/PediaFarm/home/HomeLeftBox";
+import HomeRightBox from "./../../components/PediaFarm/home/HomeRightBox";
+import { Context } from "./../../data/context";
 
 const Home: React.FC = () => {
   const { contextData, setContextData } = useContext(Context);

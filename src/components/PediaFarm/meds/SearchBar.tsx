@@ -1,5 +1,5 @@
 import React from "react";
-import { searchBarProps } from "../../data/types";
+import { searchBarProps } from "../../../data/types";
 
 const SearchBar: React.FC<searchBarProps> = ({
   input,

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { input } from "../data/types";
+import { input } from "../../data/types";
 
-import FetchedMedsDisplay from "../components/meds/FetchedMedsDisplay";
-import SearchBar from "./../components/meds/SearchBar";
-import RiskBox from "../components/meds/RiskBox";
+import FetchedMedsDisplay from "./../../components/PediaFarm/meds/FetchedMedsDisplay";
+import SearchBar from "../../components/PediaFarm/meds/SearchBar";
+import RiskBox from "../../components/PediaFarm/meds/RiskBox";
 
 const Meds: React.FC = () => {
   const [searchBarData, setSearchBarData] = useState<input>(null);

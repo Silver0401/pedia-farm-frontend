@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Button } from "@chakra-ui/button";
-import { RiskBoxProps } from "../../data/types";
+import { RiskBoxProps } from "../../../data/types";
 
 const RiskBox: React.FC<RiskBoxProps> = ({ buttonState }) => {
   useEffect(() => {

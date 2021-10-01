@@ -37,14 +37,14 @@ const HomeRightBox: React.FC = () => {
         <Button
           size="lg"
           colorScheme="twitter"
-          onClick={() => History.push("/MedsDB")}
+          onClick={() => History.push("/PediaFarm/MedsDB")}
         >
           Ir al Catálogo Pediátrico ⚕️
         </Button>
         <Button
           size="lg"
           colorScheme="teal"
-          onClick={() => History.push("/Pusher")}
+          onClick={() => History.push("/PediaFarm/Pusher")}
         >
           Añadir Fármacos 📇
         </Button>

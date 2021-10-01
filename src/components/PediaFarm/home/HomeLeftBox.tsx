@@ -1,7 +1,7 @@
 import React from "react";
 import useLottie from "lottie-react";
 import { motion } from "framer-motion";
-import PharmaAnimation from "./../../assets/pharmaLottie.json";
+import PharmaAnimation from "./../../../assets/pharmaLottie.json";
 
 const LottieAnimation = () => {
   const options = {
