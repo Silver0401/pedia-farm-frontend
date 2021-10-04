@@ -9,19 +9,18 @@ const RootLeftPage: React.FC = () => {
         <h1>MotoMeds</h1>
         <img src={MotolinaLogo} alt="MotolinaLogo" />
       </div>
-
       <p>
-        Catálogo médico de síntomas y enfermedades recurrentes en estudiantes
-        del colegio motolina
+        Herramienta de apoyo para signos y síntomas diseñada para el colegio
+        motolina
       </p>
       <Button size="lg" colorScheme="telegram" style={{ color: "white" }}>
-        → Ir a Quemaduras 🔥
+        Quemaduras 🔥
       </Button>
       <Button size="lg" colorScheme="telegram" style={{ color: "white" }}>
-        → Ir a Intoxicaciones 🍔
+        Intoxicaciones 🍔
       </Button>
       <Button size="lg" colorScheme="telegram" style={{ color: "white" }}>
-        → Ir a Anafilaxias ⚡️
+        Anafilaxias ⚡️
       </Button>
     </div>
   );
