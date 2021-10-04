@@ -15,7 +15,13 @@ const RootLeftPage: React.FC = () => {
         del colegio motolina
       </p>
       <Button size="lg" colorScheme="telegram" style={{ color: "white" }}>
-        Catálogo de Síntomas 📖
+        → Ir a Quemaduras 🔥
+      </Button>
+      <Button size="lg" colorScheme="telegram" style={{ color: "white" }}>
+        → Ir a Intoxicaciones 🍔
+      </Button>
+      <Button size="lg" colorScheme="telegram" style={{ color: "white" }}>
+        → Ir a Anafilaxias ⚡️
       </Button>
     </div>
   );
