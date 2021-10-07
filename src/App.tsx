@@ -14,6 +14,9 @@ import PusherPage from "./pages/PediaFarm/pusher";
 
 // MotoMed
 import RootPage from "./pages/MotoMed/root";
+import Quemaduras from "./components/MotoMed/Others/Quemaduras";
+import Anafilaxias from "./components/MotoMed/Others/Anafilaxias";
+import Intoxicaciones from "./components/MotoMed/Others/Intoxicaciones";
 
 const App: React.FC = () => {
   const { contextData } = useContext(Context);
@@ -58,6 +61,25 @@ const App: React.FC = () => {
             exact
             path="/MotoMed"
             component={RootPage}
+          />
+
+          <Route
+            key="MotoMedsQuemaduras"
+            exact
+            path="/MotoMed/Quemaduras"
+            component={Quemaduras}
+          />
+          <Route
+            key="MotoMedsIntoxicaciones"
+            exact
+            path="/MotoMed/Intoxicaciones"
+            component={Intoxicaciones}
+          />
+          <Route
+            key="MotoMedsAnafilaxias"
+            exact
+            path="/MotoMed/Anafilaxias"
+            component={Anafilaxias}
           />
         </Switch>
       </AnimatePresence>
