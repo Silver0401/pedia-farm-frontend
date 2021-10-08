@@ -1,7 +1,31 @@
 import React from "react";
 import ReturnButton from "./ReturnButton";
+import Carousel from "./Carousel";
+
+// Image Imports
+import burnImg1 from "./../../../assets/burn1.1.png";
+import burnImg2 from "./../../../assets/burn1.2.png";
+import burnImg3 from "./../../../assets/burn2.1.png";
+import burnImg4 from "./../../../assets/burn2.2.png";
+import burnImg5 from "./../../../assets/burn2.3.png";
+import burnImg6 from "./../../../assets/burn3.1.png";
 
 const Quemaduras: React.FC = () => {
+  const imageList = [
+    {
+      original: burnImg1,
+      thumbnail: burnImg1,
+    },
+    {
+      original: burnImg2,
+      thumbnail: burnImg2,
+    },
+    {
+      original: burnImg3,
+      thumbnail: burnImg3,
+    },
+  ];
+
   return (
     <div className="QuemadurasPage">
       <ReturnButton />
@@ -53,7 +77,9 @@ const Quemaduras: React.FC = () => {
           debajo de ésta. (NIH, 2020)
         </p>
       </div>
-      <div className="infographyContainer"></div>
+      <div className="infographyContainer">
+        <Carousel imageList={imageList} />
+      </div>
     </div>
   );
 };

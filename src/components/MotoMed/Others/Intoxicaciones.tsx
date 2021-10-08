@@ -1,7 +1,23 @@
 import React from "react";
 import ReturnButton from "./ReturnButton";
+import Carousel from "./Carousel";
+
+// Carousel Images
+import IntoxImg1 from "./../../../assets/intox1.png";
+import IntoxImg2 from "./../../../assets/intox3.png";
 
 const Intoxicaciones: React.FC = () => {
+  const imageList = [
+    {
+      original: IntoxImg1,
+      thumbnail: IntoxImg1,
+    },
+    {
+      original: IntoxImg2,
+      thumbnail: IntoxImg2,
+    },
+  ];
+
   return (
     <div className="IntoxicacionesPage">
       <ReturnButton />
@@ -30,7 +46,9 @@ const Intoxicaciones: React.FC = () => {
         <li>Dolor de Cabeza</li>
         <li>Fiebre</li>
       </div>
-      <div className="infographyContainer"></div>
+      <div className="infographyContainer">
+        <Carousel imageList={imageList} />
+      </div>
     </div>
   );
 };

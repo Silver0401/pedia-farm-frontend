@@ -105,6 +105,7 @@
     width: 60%;
     overflow: scroll;
     @include hideScrollBar;
+    background: linear-gradient(to right, rgba(64, 90, 177, 0.8) 5%, white 90%);
 
     > *:not(hr) {
       padding: 50px 10%;
@@ -112,7 +113,11 @@
 
     hr {
       height: 1px;
-      background: linear-gradient(to right, rgb(57, 57, 232), transparent);
+      background: linear-gradient(
+        to right,
+        rgba(64, 90, 177, 0.8) 5%,
+        transparent 90%
+      );
     }
 
     h1 {
@@ -135,20 +140,52 @@
   .infographyContainer {
     height: 100%;
     width: 40%;
-    background: linear-gradient(to left, rgb(64, 90, 177), transparent);
+    background-color: white;
+    @include alignCenter;
+
+    .slick-slider {
+      width: 80%;
+      height: 60%;
+
+      .slick-arrow {
+        background-color: black;
+        @include alignCenter;
+        border-radius: 50%;
+      }
+
+      div {
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    .image-gallery {
+      width: 70%;
+      // height: 60%;
+    }
   }
 
-  Button {
+  .ReturnButton {
     position: absolute;
     top: 0;
     right: 0;
     border-radius: 0;
     border-bottom-left-radius: 50%;
     background-color: transparent;
-    border: 2px solid white;
+    border: 2px solid rgb(42, 174, 230);
 
     svg {
-      fill: white;
+      fill: rgb(42, 174, 230);
     }
   }
 }
+
+// .QuemadurasPage {
+//   .imageGallery {
+//     width: 600px;
+//     height: 400px;
+//     border: 5px solid blue;
+//   }
+// }

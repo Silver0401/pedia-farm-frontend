@@ -6,7 +6,11 @@ const ReturnButton: React.FC = () => {
   const History = useHistory();
 
   return (
-    <Button onClick={() => History.push("/MotoMed")} size="lg">
+    <Button
+      className="ReturnButton"
+      onClick={() => History.push("/MotoMed")}
+      size="lg"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"

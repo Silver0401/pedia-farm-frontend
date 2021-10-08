@@ -1,7 +1,22 @@
 import React from "react";
 import ReturnButton from "./ReturnButton";
+import Carousel from "./Carousel";
+
+import burnImg1 from "./../../../assets/burn1.1.png";
+import burnImg2 from "./../../../assets/burn1.2.png";
 
 const Anafilaxias: React.FC = () => {
+  const imageList = [
+    {
+      original: burnImg1,
+      thumbnail: burnImg1,
+    },
+    {
+      original: burnImg2,
+      thumbnail: burnImg2,
+    },
+  ];
+
   return (
     <div className="AnafilaxiasPage">
       <ReturnButton />
@@ -39,7 +54,9 @@ const Anafilaxias: React.FC = () => {
         <li>Hinchazón de cara, ojos y lengua</li>
         <li>Pérdida del conocimiento</li>
       </div>
-      <div className="infographyContainer"></div>
+      <div className="infographyContainer">
+        <Carousel imageList={imageList} />
+      </div>
     </div>
   );
 };
