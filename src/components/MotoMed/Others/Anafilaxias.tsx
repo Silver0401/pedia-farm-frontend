@@ -35,15 +35,21 @@ const Anafilaxias: React.FC = () => {
         <hr />
         <h2>Definición</h2>
         <p>
-          La anafilaxia es una reacción alérgica grave en todo el cuerpo a un
-          químico que se ha convertido en alergeno. Un alergeno es una sustancia
-          que puede ocasionar una reacción alérgica.
+          La anafilaxia se define como una reacción alérgica grave en todo el
+          cuerpo en respuesta a un químico que se ha convertido en alergeno. Se
+          le conoce como alergeno a una sustancia que puede ocasionar una
+          reacción alérgica. Cualquier alergeno es capaz de desatar una reacción
+          anafiláctica. Las causas comunes incluyen:
         </p>
 
-        <h2>Causas</h2>
         <li>Alergias farmacológicas</li>
         <li>Alergias a alimentos</li>
         <li>Picaduras/mordeduras de insectos</li>
+
+        <p>
+          Los síntomas se desarrollan rápidamente, generalmente en cuestión de
+          segundos o minutos. Pueden incluir cualquiera de los siguientes:
+        </p>
 
         <h2>Signos y Síntomas</h2>
         <li>Dolor abdominal</li>
