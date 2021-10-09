@@ -105,7 +105,7 @@
     width: 60%;
     overflow: scroll;
     @include hideScrollBar;
-    background: linear-gradient(to right, rgba(64, 90, 177, 0.8) 5%, white 90%);
+    // background: linear-gradient(to right, transparent 5%, white 90%);
 
     > *:not(hr) {
       padding: 50px 10%;
@@ -124,6 +124,11 @@
       font-weight: bold;
       font-size: 3rem;
       text-align: center;
+      background: linear-gradient(
+        to bottom,
+        rgba(64, 90, 177, 0.8) 5%,
+        transparent 90%
+      );
     }
     h2 {
       font-weight: bold;
@@ -131,9 +136,15 @@
       text-decoration: underline black;
     }
 
+    h3 {
+      font-size: 1.3rem;
+      text-decoration: underline overline black;
+    }
+
     p,
     li {
       font-size: 1.3rem;
+      padding: 25px 10%;
     }
   }
 
@@ -154,10 +165,20 @@
       }
 
       div {
+        height: 100%;
         img {
-          width: 100%;
+          width: 95%;
           height: auto;
+          margin: auto;
         }
+      }
+
+      h4 {
+        margin: 0px auto;
+        width: 95%;
+        text-align: center;
+        border: 2px solid rgba(64, 90, 177, 0.8);
+        // background: lightcoral;
       }
     }
 

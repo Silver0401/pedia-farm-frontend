@@ -10,11 +10,11 @@ const Intoxicaciones: React.FC = () => {
   const imageList = [
     {
       original: IntoxImg1,
-      thumbnail: IntoxImg1,
+      thumbnail: "Señales de una Intoxicación",
     },
     {
       original: IntoxImg2,
-      thumbnail: IntoxImg2,
+      thumbnail: "Solución Oral SRO",
     },
   ];
 
@@ -45,6 +45,27 @@ const Intoxicaciones: React.FC = () => {
         <li>Dolor de Estómago</li>
         <li>Dolor de Cabeza</li>
         <li>Fiebre</li>
+
+        <h2>Tratamiento</h2>
+        <p>
+          En la mayoría de los casos, las personas que sufrieron de intoxicación
+          alimentaria tienden a mejorar por sí solas, sin embargo, se puede
+          tratar administrando electrolitos y líquidos para evitar una
+          deshidratación. Para poder conocer si un niño está deshidratado, es
+          importante estar atento a los diferentes signos de deshidratación,
+          algunos de ellos son:
+        </p>
+
+        <li>Boca y lengua seca</li>
+        <li>Llanto sin lágrimas</li>
+        <li>Ojos y mejillas hundidos</li>
+        <li>Irritabilidad</li>
+
+        <p>
+          En caso de observar signos de deshidratación se debe comenzar con
+          terapia de rehidratación oral. La OMS recomienda la solución de
+          rehidratación oral (SRO), un paquete se disuelve en un litro de agua.{" "}
+        </p>
       </div>
       <div className="infographyContainer">
         <Carousel imageList={imageList} />

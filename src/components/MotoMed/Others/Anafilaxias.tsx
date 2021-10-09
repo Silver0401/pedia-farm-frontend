@@ -2,18 +2,28 @@ import React from "react";
 import ReturnButton from "./ReturnButton";
 import Carousel from "./Carousel";
 
-import burnImg1 from "./../../../assets/burn1.1.png";
-import burnImg2 from "./../../../assets/burn1.2.png";
+import AnaImg1 from "./../../../assets/Anafilaxia1.png";
+import AnaImg2 from "./../../../assets/Anafilaxia2.png";
+import AnaImg3 from "./../../../assets/Anafilaxia3.png";
+import AnaImg4 from "./../../../assets/Anafilaxia4.png";
 
 const Anafilaxias: React.FC = () => {
   const imageList = [
     {
-      original: burnImg1,
-      thumbnail: burnImg1,
+      original: AnaImg4,
+      thumbnail: "Alimentos Alergenos",
     },
     {
-      original: burnImg2,
-      thumbnail: burnImg2,
+      original: AnaImg1,
+      thumbnail: "Epi-pen",
+    },
+    {
+      original: AnaImg2,
+      thumbnail: "",
+    },
+    {
+      original: AnaImg3,
+      thumbnail: "",
     },
   ];
 
@@ -53,6 +63,56 @@ const Anafilaxias: React.FC = () => {
         <li>Mala articulación del lenguaje</li>
         <li>Hinchazón de cara, ojos y lengua</li>
         <li>Pérdida del conocimiento</li>
+
+        <h2>Puntos Esenciales</h2>
+        <li>
+          La anafilaxia es una reacción alérgica grave y peligrosamente mortal.
+          La causa de muerte en niños es generalmente de un estado sin síntomas
+          previos
+        </li>
+        <li>
+          Fuera de un hospital, los alimentos se consideran la causa más
+          frecuente de anafilaxia.
+        </li>
+        <li>
+          Los niños con antecedente de alergia a alimentos son el principal
+          grupo de riesgo para el desarrollo de anafilaxia.
+        </li>
+        <li>
+          Los principales lugares donde ocurren los episodios anafilácticos son
+          en el domicilio familiar y en la escuela
+        </li>
+        <li>
+          La adrenalina se considera el tratamiento de elección y debe de ser
+          administrada precozmente tras desencadenarse el episodio anafiláctico
+        </li>
+        <li>
+          El retraso de la administración de adrenalina incrementa la
+          probabilidad de muerte de la persona
+        </li>
+        <li>
+          En los niños con factores de riesgo aumentados de desarrollar
+          anafilaxia se les debe de identificar y plantear un plan de acción
+          personalizado
+        </li>
+        <li>
+          Dicho plan de acción debe de facilitar el reconocimiento y tratamiento
+          de la anafilaxia en la escuela
+        </li>
+
+        <h2>Tratamiento</h2>
+        <li>
+          ADMINISTRAR AUTOINYECTOR DE ADRENALINA RÁPIDAMENTE. las imágenes a la
+          derecha muestran la manera correcta de la aplicar un autoinyector de
+          adrenalina. Se puede repetir la dosis a los 10 minutos. Es esencial
+          que el niño esté tumbado con las piernas elevadas. En el caso de
+          presentar dificultad respiratoria considerable, puede estar
+          semiincorporado
+        </li>
+        <li>
+          LLAMAR AL SERVICIO DE EMERGENCIA PARA EL TRASLADO HOSPITALARIO POR
+          ANAFILAXIA y AVISAR A LOS PADRES
+        </li>
       </div>
       <div className="infographyContainer">
         <Carousel imageList={imageList} />

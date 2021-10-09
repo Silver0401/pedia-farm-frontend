@@ -32,6 +32,8 @@ const Carousel: React.FC<props> = ({ imageList }) => {
       {imageList.map((image) => {
         return (
           <div key={image.thumbnail}>
+            {image.thumbnail ? <h4>{image.thumbnail}</h4> : null}
+
             <img src={image.original} alt={image.thumbnail} />
           </div>
         );
