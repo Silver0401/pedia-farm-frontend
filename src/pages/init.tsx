@@ -2,6 +2,12 @@ import React from "react";
 import { Button } from "@chakra-ui/button";
 import { useHistory } from "react-router";
 
+interface proyectInfo {
+  Title: string;
+  Block: string;
+  Semester: number;
+}
+
 const Init: React.FC = () => {
   const History = useHistory();
 
@@ -16,30 +22,46 @@ const Init: React.FC = () => {
     </svg>
   );
 
+  const CreateNewProyect = (
+    route: string,
+    className: string,
+    colorScheme: string,
+    info: proyectInfo
+  ) => {
+    return (
+      <div className={className}>
+        <h1>{info.Title}</h1>
+        <p>{`Bloque: ${info.Block}`}</p>
+        <p>{`Semestre: ${info.Semester}`}</p>
+        <Button
+          size="lg"
+          colorScheme={colorScheme}
+          leftIcon={ArrowIcon}
+          onClick={() => History.push(`/${route}`)}
+        />
+      </div>
+    );
+  };
+
   return (
     <div className="InitPage">
-      <div className="PediaFarmBox">
-        <h1>PediaFarm</h1>
-        <p>Bloque: Farmacoterapia</p>
-        <p>Semestre: 5</p>
-        <Button
-          size="lg"
-          colorScheme="linkedin"
-          leftIcon={ArrowIcon}
-          onClick={() => History.push("/PediaFarm")}
-        />
-      </div>
-      <div className="MotoMedBox">
-        <h1>MotoMed</h1>
-        <p>Bloque: Propedéutica</p>
-        <p>Semestre: 5</p>
-        <Button
-          size="lg"
-          colorScheme="red"
-          leftIcon={ArrowIcon}
-          onClick={() => History.push("/MotoMed")}
-        />
-      </div>
+      {CreateNewProyect("PediaFarm", "PediaFarmBox", "blue", {
+        Title: "PediaFarm",
+        Block: "Farmacoterapia",
+        Semester: 5,
+      })}
+
+      {CreateNewProyect("MotoMed", "MotoMedBox", "green", {
+        Title: "MotoMeds",
+        Block: "Propedéutica",
+        Semester: 5,
+      })}
+
+      {CreateNewProyect("Neuralink", "NeuralinkBox", "purple", {
+        Title: "Elalink",
+        Block: "Bases Neuroendocrinas",
+        Semester: 5,
+      })}
     </div>
   );
 };

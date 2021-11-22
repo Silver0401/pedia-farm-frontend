@@ -18,6 +18,10 @@ import Quemaduras from "./components/MotoMed/Others/Quemaduras";
 import Anafilaxias from "./components/MotoMed/Others/Anafilaxias";
 import Intoxicaciones from "./components/MotoMed/Others/Intoxicaciones";
 
+// Neuralink
+import NeuralinkPage from "./pages/Neuralink/index";
+import RetosPage from "./pages/Neuralink/retos";
+
 const App: React.FC = () => {
   const { contextData } = useContext(Context);
   const Location = useLocation();
@@ -80,6 +84,21 @@ const App: React.FC = () => {
             exact
             path="/MotoMed/Anafilaxias"
             component={Anafilaxias}
+          />
+
+          {/* Neuralink Routes */}
+
+          <Route
+            key="NeuralinkPage"
+            exact
+            path="/Neuralink"
+            component={NeuralinkPage}
+          />
+          <Route
+            key="NeuralinkChallengesPage"
+            exact
+            path="/Neuralink/RetosCuidador"
+            component={RetosPage}
           />
         </Switch>
       </AnimatePresence>
