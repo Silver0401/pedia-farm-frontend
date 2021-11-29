@@ -48,10 +48,57 @@ const InfoBlock2: React.FC = () => {
       <div className="blockContainer">
         <div className="symptomsList">
           <h1>Síntomas de ELA</h1>
-          {createSymptom("symptom 1", symptomsDataList[0], symptomsPathList[0])}
-          {createSymptom("symptom 2", symptomsDataList[1], symptomsPathList[1])}
-          {createSymptom("symptom 3", symptomsDataList[2], symptomsPathList[2])}
-          {createSymptom("symptom 4", symptomsDataList[3], symptomsPathList[3])}
+          {createSymptom(
+            "Debilidad muscular en manos o pies ",
+            symptomsDataList[0],
+            symptomsPathList[0]
+          )}
+          {createSymptom(
+            "Calambres y espasmos musculares",
+            symptomsDataList[1],
+            symptomsPathList[1]
+          )}
+          {createSymptom(
+            "Dificultad para hablar",
+            symptomsDataList[2],
+            symptomsPathList[2]
+          )}
+          {createSymptom(
+            "Dificultad y torpeza para moverse",
+            symptomsDataList[3],
+            symptomsPathList[3]
+          )}
+          {createSymptom(
+            "Tropezones y caídas frecuentes",
+            symptomsDataList[3],
+            symptomsPathList[3]
+          )}
+          {createSymptom(
+            "Dificultad para realizar actividades cotidianas",
+            symptomsDataList[3],
+            symptomsPathList[3]
+          )}
+          {createSymptom(
+            "Dificultad para tragar",
+            symptomsDataList[3],
+            symptomsPathList[3]
+          )}
+          {createSymptom(
+            "Cambios en el comportamiento",
+            symptomsDataList[3],
+            symptomsPathList[3]
+          )}
+          {createSymptom(
+            "Problemas respiratorios",
+            symptomsDataList[3],
+            symptomsPathList[3]
+          )}
+          {createSymptom(
+            "Problemas de alimentación",
+            symptomsDataList[3],
+            symptomsPathList[3]
+          )}
+          {createSymptom("Demencia", symptomsDataList[3], symptomsPathList[3])}
         </div>
         <div className="symptomsInfo">
           <h1>{symptomDisplayed?.title}</h1>

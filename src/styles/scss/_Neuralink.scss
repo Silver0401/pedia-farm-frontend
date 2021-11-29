@@ -330,4 +330,168 @@
   height: 100%;
   position: absolute;
   background: lightblue;
+  @include alignCenter;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #642b73; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #c6426e,
+    #642b73
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #c6426e,
+    #642b73
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  .titlesBox {
+    position: relative;
+    width: 100%;
+    height: 30%;
+    @include alignCenter;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    > * {
+      color: white;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: bolder;
+      background-color: rgba(255, 255, 255, 0.4);
+      border-radius: 20px;
+      width: 50%;
+      height: 30%;
+      @include alignCenter;
+      text-align: center;
+    }
+    p {
+      width: 90%;
+      font-size: 1.1rem;
+    }
+  }
+
+  .sectionsBox {
+    position: relative;
+    width: 90%;
+    height: 70%;
+    overflow: scroll;
+
+    .drawer {
+      position: relative;
+      width: 100%;
+      @include alignCenter;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      border: 2px solid white;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      margin: 1px 0px;
+
+      > * {
+        width: 100%;
+        height: 50%;
+      }
+
+      .headerBox {
+        @include alignCenter;
+        flex-direction: row;
+        justify-content: space-between;
+        cursor: pointer;
+
+        > * {
+          margin: 0px 50px;
+        }
+
+        h1 {
+          color: white;
+          font-weight: bolder;
+        }
+
+        .svgBox {
+          position: relative;
+          width: 30px;
+          height: 30px;
+
+          svg {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+
+      .contentBox {
+        // @include alignCenter;
+        // flex-direction: column;
+        // justify-content: space-around;
+        overflow: hidden;
+        // background-color: lightblue;
+        height: calc(100% - 100px);
+        overflow: scroll;
+
+        p {
+          width: 90%;
+          // height: 250px;
+          color: white;
+          margin: 0px auto;
+          // border: 5px solid lightcoral;
+        }
+
+        .visualsBox {
+          width: 100%;
+          height: 400px;
+          @include alignCenter;
+          flex-direction: row;
+          justify-content: space-around;
+          // border: 5px solid lightgreen;
+          overflow: hidden;
+
+          .imgContainer {
+            position: relative;
+            width: 420px;
+            height: 315px;
+            overflow: scroll;
+
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+
+    .open {
+      height: 500px;
+
+      .headerBox {
+        height: 100px;
+        .svgBox {
+          transform: rotate(90deg);
+        }
+      }
+
+      .contentBox {
+        opacity: 1;
+      }
+    }
+    .closed {
+      height: 100px;
+
+      .headerBox {
+        height: 100%;
+        .svgBox {
+          transform: rotate(0deg);
+        }
+      }
+
+      .contentBox {
+        opacity: 0;
+        height: 0;
+      }
+    }
+  }
 }

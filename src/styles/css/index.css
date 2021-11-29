@@ -1774,6 +1774,245 @@ html {
   height: 100%;
   position: absolute;
   background: lightblue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  background: #642b73;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#c6426e), to(#642b73));
+  background: linear-gradient(to right, #c6426e, #642b73);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.RetosPage .titlesBox {
+  position: relative;
+  width: 100%;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.RetosPage .titlesBox > * {
+  color: white;
+}
+
+.RetosPage .titlesBox h1 {
+  font-size: 2rem;
+  font-weight: bolder;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  width: 50%;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.RetosPage .titlesBox p {
+  width: 90%;
+  font-size: 1.1rem;
+}
+
+.RetosPage .sectionsBox {
+  position: relative;
+  width: 90%;
+  height: 70%;
+  overflow: scroll;
+}
+
+.RetosPage .sectionsBox .drawer {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow: hidden;
+  border: 2px solid white;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  margin: 1px 0px;
+}
+
+.RetosPage .sectionsBox .drawer > * {
+  width: 100%;
+  height: 50%;
+}
+
+.RetosPage .sectionsBox .drawer .headerBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  cursor: pointer;
+}
+
+.RetosPage .sectionsBox .drawer .headerBox > * {
+  margin: 0px 50px;
+}
+
+.RetosPage .sectionsBox .drawer .headerBox h1 {
+  color: white;
+  font-weight: bolder;
+}
+
+.RetosPage .sectionsBox .drawer .headerBox .svgBox {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+.RetosPage .sectionsBox .drawer .headerBox .svgBox svg {
+  width: 100%;
+  height: 100%;
+}
+
+.RetosPage .sectionsBox .drawer .contentBox {
+  overflow: hidden;
+  height: calc(100% - 100px);
+  overflow: scroll;
+}
+
+.RetosPage .sectionsBox .drawer .contentBox p {
+  width: 90%;
+  color: white;
+  margin: 0px auto;
+}
+
+.RetosPage .sectionsBox .drawer .contentBox .visualsBox {
+  width: 100%;
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  overflow: hidden;
+}
+
+.RetosPage .sectionsBox .drawer .contentBox .visualsBox .imgContainer {
+  position: relative;
+  width: 420px;
+  height: 315px;
+  overflow: scroll;
+}
+
+.RetosPage .sectionsBox .drawer .contentBox .visualsBox .imgContainer img {
+  width: 100%;
+  height: auto;
+}
+
+.RetosPage .sectionsBox .open {
+  height: 500px;
+}
+
+.RetosPage .sectionsBox .open .headerBox {
+  height: 100px;
+}
+
+.RetosPage .sectionsBox .open .headerBox .svgBox {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.RetosPage .sectionsBox .open .contentBox {
+  opacity: 1;
+}
+
+.RetosPage .sectionsBox .closed {
+  height: 100px;
+}
+
+.RetosPage .sectionsBox .closed .headerBox {
+  height: 100%;
+}
+
+.RetosPage .sectionsBox .closed .headerBox .svgBox {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.RetosPage .sectionsBox .closed .contentBox {
+  opacity: 0;
+  height: 0;
 }
 
 @media (max-width: 1000px) {
