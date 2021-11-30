@@ -28,7 +28,7 @@ const symptomsDataList = [
   "Es una enfermedad que impide que te comuniques. Puede afectar tu capacidad de hablar, escribir y comprender el lenguaje tanto verbal como escrito.",
   "El movimiento descoordinado se debe a un problema con el control muscular que ocasiona una incapacidad para coordinar los movimientos. ",
   "Pueden provocar lesiones, algunas de ellas mortales como fracturas de columna, cadera y golpes en la cabeza.",
-  "La persona ya no es capaz, o le cuesta mucho trabajo hacer las actividad diarias que cotidianamente realizada en un pasado. ",
+  "La persona ya no es capaz, o le cuesta mucho trabajo hacer las actividad diarias que cotidianamente realizaba en un pasado. ",
   "La dificultad para tragar se llama disfagia. Significa tener problemas con el descenso de alimentos o líquidos por la garganta.",
   "Hay cambios que pueden afectar la memoria, el estado de ánimo y el comportamiento de la persona",
   "Los problemas respiratorios se producen cuando el cuerpo es incapaz de adquirir el oxígeno que necesita.",
