@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import ela1 from "../../assets/ela1.png";
 
 interface drawer {
   state: "open" | "closed";
@@ -78,11 +77,13 @@ const RetosPage: React.FC = (props: any) => {
             })}
           </ul>
 
-          <div className="visualsBox">
-            {VisualstList.map((visual) => {
-              return visual;
-            })}
-          </div>
+          {visuals ? (
+            <div className="visualsBox">
+              {VisualstList.map((visual) => {
+                return visual;
+              })}
+            </div>
+          ) : null}
         </div>
       </div>
     );
