@@ -9,10 +9,10 @@ interface cardData {
 
 const card1Data = [
   "Estás siglas se refieren a la enfermedad de Esclerosis Lateral Amiotrófica pero se le puede conocer con otros nombres como Enfermedad de Motoneurona o Enfermedad de Lou Gehrig, en honor a un jugador de Béisbol (imágen al final de la carta).",
-  "Esta es una enfermedad que se agrava (*o agudiza no se cual se escucha menos rimbombante) con el tiempo y que ocasiona debilidad muscular, lo que da pie a la aparición de afecciones que se describen más adelante como lo es la dificultad para moverse.",
+  "Esta es una enfermedad que se agrava con el tiempo y que ocasiona debilidad muscular, lo que da pie a la aparición de afecciones que se describen más adelante como lo es la dificultad para moverse.",
 ];
 const card2Data = [
-  "Esta enfermedad provoca la pérdida de neuronas motoras (ver anexo 1) en el sistema nervioso central (SNC) (ver anexo 2), por lo que se afecta la movilidad, más no la sensibilidad por lo que la persona no perderá la vista, olfato, gusto, oído o tacto",
+  "Esta enfermedad provoca la pérdida de neuronas motoras en el sistema nervioso central (SNC), por lo que se afecta la movilidad, más no la sensibilidad por lo que la persona no perderá la vista, olfato, gusto, oído o tacto",
   "Actualmente no se conoce con exactitud los causantes de la enfermedad, sin embargo puede ser familiar (ELAf) o esporádica (ELAe)",
   "En la ELAf, la enfermedad se manifiesta en la familia y puede ser heredada por lo que la causa es genética.",
   "En la ELAe, que es la forma más común en la que se presenta la enfermedad, esta aparece de manera imprevisible, sin antecedentes de la enfermedad dentro de la familia.",
