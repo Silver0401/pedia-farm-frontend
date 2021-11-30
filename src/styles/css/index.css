@@ -1450,25 +1450,12 @@ html {
 .NeuralinkPage #InfoBlock1 .card .infoBox {
   width: 90%;
   height: 90%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  z-index: 1;
 }
 
 .NeuralinkPage #InfoBlock1 .card .infoBox > * {
   color: white;
+  z-index: 0;
 }
 
 .NeuralinkPage #InfoBlock1 .card .infoBox h2 {
@@ -1481,13 +1468,15 @@ html {
 }
 
 .NeuralinkPage #InfoBlock1 .card .infoBox p {
+  z-index: 2;
   -webkit-transition: opacity 500ms;
   transition: opacity 500ms;
   opacity: 0;
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
-  padding: 0px 5%;
+  padding: 20px 5%;
   font-weight: bolder;
+  overflow: hidden;
 }
 
 .NeuralinkPage #InfoBlock1 .card .svgBox {
@@ -1504,6 +1493,7 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  z-index: 0;
   margin-top: 15%;
   width: 100px;
   height: 100px;
@@ -1525,6 +1515,34 @@ html {
 .NeuralinkPage #InfoBlock1 .front {
   -webkit-transform: rotateY(0deg);
           transform: rotateY(0deg);
+}
+
+.NeuralinkPage #InfoBlock1 .front .infoBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  overflow: hidden;
+}
+
+.NeuralinkPage #InfoBlock1 .front .infoBox p {
+  position: absolute;
+}
+
+.NeuralinkPage #InfoBlock1 .front .infoBox h2 {
+  height: 15%;
+  margin-bottom: 80%;
 }
 
 .NeuralinkPage #InfoBlock1 .front:hover .infoBox h2 {
@@ -1555,13 +1573,14 @@ html {
 
 .NeuralinkPage #InfoBlock1 .back .infoBox {
   overflow-y: scroll;
+  display: block;
 }
 
 .NeuralinkPage #InfoBlock1 .back .infoBox h2 {
+  height: 0;
   opacity: 0;
   -webkit-transition: opacity 500ms;
   transition: opacity 500ms;
-  display: none;
 }
 
 .NeuralinkPage #InfoBlock1 .back .infoBox p {
@@ -1702,8 +1721,86 @@ html {
 }
 
 .NeuralinkPage #InfoBlock2 .blockContainer .symptomsInfo {
+  position: relative;
   width: 50%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  flex-direction: column;
+}
+
+.NeuralinkPage #InfoBlock2 .blockContainer .symptomsInfo .headerColors {
+  position: relative;
+  width: 100%;
+  height: 15%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-bottom: 2px solid #c6426e;
+}
+
+.NeuralinkPage #InfoBlock2 .blockContainer .symptomsInfo .headerColors .box {
+  position: relative;
+  width: 25%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.NeuralinkPage #InfoBlock2 .blockContainer .symptomsInfo .headerColors .box .ball {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.NeuralinkPage #InfoBlock2 .blockContainer .symptomsInfo .headerColors .box p {
+  width: 70%;
+  color: #642b73;
+  font-weight: bolder;
+}
+
+.NeuralinkPage #InfoBlock2 .blockContainer .symptomsInfo .symptomsDataBox {
+  position: relative;
+  width: 100%;
+  height: 85%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1723,24 +1820,26 @@ html {
           justify-content: space-evenly;
 }
 
-.NeuralinkPage #InfoBlock2 .blockContainer .symptomsInfo > * {
+.NeuralinkPage #InfoBlock2 .blockContainer .symptomsInfo .symptomsDataBox > * {
   margin: 0px 10%;
 }
 
-.NeuralinkPage #InfoBlock2 .blockContainer .symptomsInfo h1 {
+.NeuralinkPage #InfoBlock2 .blockContainer .symptomsInfo .symptomsDataBox h1 {
   font-weight: bolder;
+  padding: 0px 10%;
   color: #642b73;
   font-size: 2rem;
+  text-align: center;
 }
 
-.NeuralinkPage #InfoBlock2 .blockContainer .symptomsInfo p {
+.NeuralinkPage #InfoBlock2 .blockContainer .symptomsInfo .symptomsDataBox p {
   font-size: 1.2rem;
 }
 
-.NeuralinkPage #InfoBlock2 .blockContainer .symptomsInfo .imgContainer {
+.NeuralinkPage #InfoBlock2 .blockContainer .symptomsInfo .symptomsDataBox .imgContainer {
   position: relative;
-  width: 170px;
-  height: 170px;
+  width: 300px;
+  height: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1754,7 +1853,6 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border-radius: 50%;
   background: #642b73;
   /* fallback for old browsers */
   /* Chrome 10-25, Safari 5.1-6 */
@@ -1763,17 +1861,25 @@ html {
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.NeuralinkPage #InfoBlock2 .blockContainer .symptomsInfo .imgContainer svg {
-  fill: white;
-  width: 70%;
-  height: 70%;
+.NeuralinkPage #InfoBlock2 .blockContainer .symptomsInfo .symptomsDataBox .imgContainer img {
+  width: 100%;
+  height: 100%;
+}
+
+.NeuralinkPage #InfoBlock2 .blockContainer .symptomsInfo .symptomsDataBox .colorBallShifter {
+  top: 12%;
+  left: 20px;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #c6426e;
+  border-radius: 50%;
+  position: absolute;
 }
 
 .RetosPage {
   width: 100%;
   height: 100%;
   position: absolute;
-  background: lightblue;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1788,15 +1894,60 @@ html {
       -ms-flex-direction: column;
           flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  background: #642b73;
-  /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-gradient(linear, left top, right top, from(#c6426e), to(#642b73));
-  background: linear-gradient(to right, #c6426e, #642b73);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background: white;
+}
+
+.RetosPage .returnButton {
+  z-index: 5;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 20px;
+  left: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+  border-radius: 50%;
+  border-right: 5px solid #642b73;
+  border-left: 5px solid #642b73;
+  border-top: 5px solid #c6426e;
+  border-bottom: 5px solid #c6426e;
+  cursor: pointer;
+  -webkit-transition: background-color 500ms;
+  transition: background-color 500ms;
+}
+
+.RetosPage .returnButton svg {
+  width: 70%;
+  height: 70%;
+  -webkit-transition: fill 500ms;
+  transition: fill 500ms;
+}
+
+.RetosPage .returnButton:hover {
+  -webkit-transition: background-color 500ms;
+  transition: background-color 500ms;
+  background-color: rgba(101, 43, 115, 0.4);
+}
+
+.RetosPage .returnButton:hover svg {
+  -webkit-transition: fill 500ms;
+  transition: fill 500ms;
+  fill: white;
 }
 
 .RetosPage .titlesBox {
@@ -1827,12 +1978,11 @@ html {
 }
 
 .RetosPage .titlesBox h1 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bolder;
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 20px;
-  width: 50%;
-  height: 30%;
+  padding: 5px 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1847,17 +1997,25 @@ html {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
+  background: #642b73;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#c6426e), to(#642b73));
+  background: linear-gradient(to right, #c6426e, #642b73);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .RetosPage .titlesBox p {
   width: 90%;
   font-size: 1.1rem;
+  color: #642b73;
+  font-weight: bolder;
 }
 
 .RetosPage .sectionsBox {
   position: relative;
   width: 90%;
-  height: 70%;
+  height: 60%;
   overflow: scroll;
 }
 
@@ -1886,6 +2044,14 @@ html {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   margin: 1px 0px;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+  background: #642b73;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#c6426e), to(#642b73));
+  background: linear-gradient(to right, #c6426e, #642b73);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .RetosPage .sectionsBox .drawer > * {
@@ -1907,11 +2073,17 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  flex-direction: row;
+  top: 0;
+  left: 0;
+  position: absolute;
+  -ms-flex-direction: row;
+      flex-direction: row;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   cursor: pointer;
+  -webkit-transition: height 500ms;
+  transition: height 500ms;
 }
 
 .RetosPage .sectionsBox .drawer .headerBox > * {
@@ -1921,28 +2093,45 @@ html {
 .RetosPage .sectionsBox .drawer .headerBox h1 {
   color: white;
   font-weight: bolder;
+  font-size: 1.2rem;
 }
 
 .RetosPage .sectionsBox .drawer .headerBox .svgBox {
   position: relative;
   width: 30px;
   height: 30px;
+  -webkit-transition: -webkit-transform 500ms;
+  transition: -webkit-transform 500ms;
+  transition: transform 500ms;
+  transition: transform 500ms, -webkit-transform 500ms;
 }
 
 .RetosPage .sectionsBox .drawer .headerBox .svgBox svg {
   width: 100%;
   height: 100%;
+  fill: white;
 }
 
 .RetosPage .sectionsBox .drawer .contentBox {
+  position: relative;
+  margin-top: 100px;
   overflow: hidden;
   height: calc(100% - 100px);
   overflow: scroll;
+  -webkit-transition: opacity 500ms, height 250ms;
+  transition: opacity 500ms, height 250ms;
 }
 
-.RetosPage .sectionsBox .drawer .contentBox p {
+.RetosPage .sectionsBox .drawer .contentBox p,
+.RetosPage .sectionsBox .drawer .contentBox li {
   width: 90%;
+  font-weight: 600;
   color: white;
+  margin: 15px auto;
+}
+
+.RetosPage .sectionsBox .drawer .contentBox ul {
+  width: 90%;
   margin: 0px auto;
 }
 

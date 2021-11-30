@@ -1,40 +1,78 @@
+import { AlertDescription } from "@chakra-ui/alert";
 import React, { useState } from "react";
+
+import img1 from "../../assets/Elalink/debilidadMusc.jpeg";
+import img2 from "../../assets/Elalink/calambre.jpeg";
+import img3 from "../../assets/Elalink/dificultadhablar.jpeg";
+import img4 from "../../assets/Elalink/torpeza.jpeg";
+import img5 from "../../assets/Elalink/caida.jpeg";
+import img6 from "../../assets/Elalink/cotidianas.jpeg";
+import img7 from "../../assets/Elalink/dificultadTragar.jpeg";
+import img8 from "../../assets/Elalink/comportamiento.jpeg";
+import img9 from "../../assets/Elalink/respiratorios.jpeg";
+import img10 from "../../assets/Elalink/alimentacion.jpeg";
+import img11 from "../../assets/Elalink/demencia.jpeg";
+
+type risk = "alto" | "medio" | "bajo";
 
 interface symptom {
   title: string;
   description: string;
   img: string;
+  risk: risk;
 }
 
 const symptomsDataList = [
-  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, delectus doloremque veniam quia dolore sequi neque rerum nesciunt, saepe in ipsam! Facilis doloribus error ad harum quaerat at perspiciatis saepe?",
-  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, delectus doloremque veniam quia dolore sequi neque rerum nesciunt, saepe in ipsam! Facilis doloribus error ad harum quaerat at perspiciatis saepe?",
-  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, delectus doloremque veniam quia dolore sequi neque rerum nesciunt, saepe in ipsam! Facilis doloribus error ad harum quaerat at perspiciatis saepe?",
-  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, delectus doloremque veniam quia dolore sequi neque rerum nesciunt, saepe in ipsam! Facilis doloribus error ad harum quaerat at perspiciatis saepe?",
+  "falta de fuerza física o muscular y es la sensación de que se requiere un esfuerzo adicional para mover los brazos, las piernas u otros músculos.",
+  "Contracciones involuntarias de un músculo, generalmente, inofensivas y temporales, pero que pueden ser dolorosas.",
+  "Es una enfermedad que impide que te comuniques. Puede afectar tu capacidad de hablar, escribir y comprender el lenguaje tanto verbal como escrito.",
+  "El movimiento descoordinado se debe a un problema con el control muscular que ocasiona una incapacidad para coordinar los movimientos. ",
+  "Pueden provocar lesiones, algunas de ellas mortales como fracturas de columna, cadera y golpes en la cabeza.",
+  "La persona ya no es capaz, o le cuesta mucho trabajo hacer las actividad diarias que cotidianamente realizada en un pasado. ",
+  "La dificultad para tragar se llama disfagia. Significa tener problemas con el descenso de alimentos o líquidos por la garganta.",
+  "Hay cambios que pueden afectar la memoria, el estado de ánimo y el comportamiento de la persona",
+  "Los problemas respiratorios se producen cuando el cuerpo es incapaz de adquirir el oxígeno que necesita.",
+  "Afectación de la seguridad como de la eficacia de la deglución. En algunos casos el primer signo de disfagia es la pérdida progresiva de peso, pero lo más frecuente es que el paciente refiera episodios de atragantamiento y cambios en la voz después de comer.",
+  "Deterioro grave de la capacidad mental que interfiere con la vida cotidiana. La pérdida de memoria es un ejemplo.",
 ];
 const symptomsPathList = [
-  "M15.131 5s1.692 2.025 2.268 2.711c1.213 1.461 1.573 2.31 1.601 4.161v10.128c-.015 1.094-.859 1.961-1.925 1.999-3.368.043-6.736.043-10.104 0-1.073-.038-1.964-.917-1.971-1.999v-10.134c.009-2.04.587-2.921 1.948-4.508.591-.689 1.941-2.358 1.941-2.358h6.242zm1.869 15h-10v2h10v-2zm-4-7h-2v2h-2v2h2v2h2v-2h2.023l-.023-2h-2v-2zm1.245-6h-4.457c-.634.787-1.224 1.522-1.489 1.857-1.026 1.3-1.293 1.807-1.299 3.143h10c-.013-1.346-.184-1.757-1.137-3.008-.268-.353-.929-1.157-1.618-1.992zm1.755-3h-8v-3c0-.552.448-1 1-1h6c.552 0 1 .448 1 1v3z",
-  "M17.5 10c3.587 0 6.5 2.913 6.5 6.5s-2.913 6.5-6.5 6.5-6.5-2.913-6.5-6.5 2.913-6.5 6.5-6.5zm-7.802 9.864l-.363.635c-1.381 2.391-4.443 3.211-6.834 1.831-2.391-1.381-3.211-4.443-1.831-6.834l6.868-11.995c.925-1.602 2.606-2.499 4.333-2.501.85-.001 1.712.215 2.501.67 2.245 1.297 3.106 4.076 2.058 6.39-.979.125-1.906.416-2.753.844l.793-1.401c.828-1.434.336-3.272-1.099-4.1-1.434-.828-3.272-.336-4.1 1.099l-2.866 5.063 3.975 2.295c-.363.557-.663 1.16-.889 1.797l-4.086-2.359-3.002 5.199c-.828 1.434-.336 3.272 1.099 4.1 1.434.828 3.272.336 4.1-1.099l1.42-2.459c.063.998.298 1.949.676 2.825zm10.882-6.644l-4.381 7.589c.412.124.849.191 1.301.191 2.484 0 4.5-2.016 4.5-4.5 0-1.293-.546-2.459-1.42-3.28zm-1.725-1.012c-.428-.135-.883-.208-1.355-.208-2.484 0-4.5 2.016-4.5 4.5 0 1.313.563 2.495 1.461 3.318l4.394-7.61z",
-  "M12 0c-3.371 2.866-5.485 3-9 3v11.535c0 4.603 3.203 5.804 9 9.465 5.797-3.661 9-4.862 9-9.465v-11.535c-3.516 0-5.629-.134-9-3zm0 6.5c3.036 0 5.5 2.464 5.5 5.5s-2.464 5.5-5.5 5.5-5.5-2.464-5.5-5.5 2.464-5.5 5.5-5.5zm1 2.5v2h2v2h-2v2h-2v-2h-2v-2h2v-2h2z",
-  "M22 6c1.104 0 2 .896 2 2v12c0 1.104-.896 2-2 2h-20c-1.104 0-2-.896-2-2v-12c0-1.104.896-2 2-2h5v-2c0-1.104.896-2 2-2h6c1.104 0 2 .896 2 2v2h5zm0 2.5c0-.276-.224-.5-.5-.5h-19c-.276 0-.5.224-.5.5v11c0 .276.224.5.5.5h19c.276 0 .5-.224.5-.5v-11zm-9 4.5h3v2h-3v3h-2v-3h-3v-2h3v-3h2v3zm1.5-9h-5c-.276 0-.5.224-.5.5v1.5h6v-1.5c0-.276-.224-.5-.5-.5",
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
+  img6,
+  img7,
+  img8,
+  img9,
+  img10,
+  img11,
 ];
 
 const InfoBlock2: React.FC = () => {
   const [symptomDisplayed, setSymptomDisplayed] = useState<symptom>({
-    title: "symptom 1",
-    description: symptomsDataList[0],
+    title: "Debilidad muscular en manos o pies",
+    description:
+      "falta de fuerza física o muscular y es la sensación de que se requiere un esfuerzo adicional para mover los brazos, las piernas u otros músculos.",
     img: symptomsPathList[0],
+    risk: "bajo",
   });
 
-  const createSymptom = (name: string, data: string, svgPath: string) => {
+  const createSymptom = (
+    name: string,
+    data: string,
+    img: string,
+    riesgo: risk
+  ) => {
     return (
       <div
         className="symptom"
         onClick={() => {
           setSymptomDisplayed({
             title: name,
+            img: img,
             description: data,
-            img: svgPath,
+            risk: riesgo,
           });
         }}
       >
@@ -49,72 +87,108 @@ const InfoBlock2: React.FC = () => {
         <div className="symptomsList">
           <h1>Síntomas de ELA</h1>
           {createSymptom(
-            "Debilidad muscular en manos o pies ",
+            "Debilidad muscular en manos o pies",
             symptomsDataList[0],
-            symptomsPathList[0]
+            symptomsPathList[0],
+            "bajo"
           )}
           {createSymptom(
             "Calambres y espasmos musculares",
             symptomsDataList[1],
-            symptomsPathList[1]
+            symptomsPathList[1],
+            "bajo"
           )}
           {createSymptom(
             "Dificultad para hablar",
             symptomsDataList[2],
-            symptomsPathList[2]
+            symptomsPathList[2],
+            "bajo"
           )}
           {createSymptom(
             "Dificultad y torpeza para moverse",
             symptomsDataList[3],
-            symptomsPathList[3]
+            symptomsPathList[3],
+            "bajo"
           )}
           {createSymptom(
             "Tropezones y caídas frecuentes",
-            symptomsDataList[3],
-            symptomsPathList[3]
+            symptomsDataList[4],
+            symptomsPathList[4],
+            "bajo"
           )}
           {createSymptom(
             "Dificultad para realizar actividades cotidianas",
-            symptomsDataList[3],
-            symptomsPathList[3]
+            symptomsDataList[5],
+            symptomsPathList[5],
+            "medio"
           )}
           {createSymptom(
             "Dificultad para tragar",
-            symptomsDataList[3],
-            symptomsPathList[3]
+            symptomsDataList[6],
+            symptomsPathList[6],
+            "medio"
           )}
           {createSymptom(
             "Cambios en el comportamiento",
-            symptomsDataList[3],
-            symptomsPathList[3]
+            symptomsDataList[7],
+            symptomsPathList[7],
+            "medio"
           )}
           {createSymptom(
             "Problemas respiratorios",
-            symptomsDataList[3],
-            symptomsPathList[3]
+            symptomsDataList[8],
+            symptomsPathList[8],
+            "alto"
           )}
           {createSymptom(
             "Problemas de alimentación",
-            symptomsDataList[3],
-            symptomsPathList[3]
+            symptomsDataList[9],
+            symptomsPathList[9],
+            "alto"
           )}
-          {createSymptom("Demencia", symptomsDataList[3], symptomsPathList[3])}
+          {createSymptom(
+            "Demencia",
+            symptomsDataList[10],
+            symptomsPathList[10],
+            "alto"
+          )}
         </div>
         <div className="symptomsInfo">
-          <h1>{symptomDisplayed?.title}</h1>
-          <p>{symptomDisplayed?.description}</p>
+          <div className="headerColors">
+            <div className="box">
+              <div className="ball" style={{ backgroundColor: "red" }} />
+              <p>Síntoma muy grave</p>
+            </div>
+            <div className="box">
+              <div className="ball" style={{ backgroundColor: "yellow" }} />
+              <p>Síntoma medio grave</p>
+            </div>
+            <div className="box">
+              <div className="ball" style={{ backgroundColor: "lightgreen" }} />
+              <p>Síntoma poco grave</p>
+            </div>
+          </div>
 
-          <div className="imgContainer">
-            <svg
-              width="24"
-              height="24"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fillRule="evenodd"
-              clipRule="evenodd"
-            >
-              <path d={symptomDisplayed?.img} />
-            </svg>
+          <div className="symptomsDataBox">
+            <h1>{symptomDisplayed?.title}</h1>
+            <p>{symptomDisplayed?.description}</p>
+
+            <div
+              className="colorBallShifter"
+              style={{
+                backgroundColor: `${
+                  symptomDisplayed?.risk === "alto"
+                    ? "red"
+                    : symptomDisplayed?.risk === "medio"
+                    ? "yellow"
+                    : "lightgreen"
+                }`,
+              }}
+            />
+
+            <div className="imgContainer">
+              <img alt="coso" src={symptomDisplayed?.img} />
+            </div>
           </div>
         </div>
       </div>

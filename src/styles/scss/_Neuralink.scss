@@ -125,11 +125,11 @@
       .infoBox {
         width: 90%;
         height: 90%;
-        @include alignCenter;
-        justify-content: space-around;
+        z-index: 1;
 
         > * {
           color: white;
+          z-index: 0;
         }
 
         h2 {
@@ -140,16 +140,19 @@
           transition: all 500ms;
         }
         p {
+          z-index: 2;
           transition: opacity 500ms;
           opacity: 0;
           transform: rotateY(180deg);
-          padding: 0px 5%;
+          padding: 20px 5%;
           font-weight: bolder;
+          overflow: hidden;
         }
       }
 
       .svgBox {
         @include alignCenter;
+        z-index: 0;
         margin-top: 15%;
         width: 100px;
         height: 100px;
@@ -170,6 +173,21 @@
     .front {
       transform: rotateY(0deg);
 
+      .infoBox {
+        @include alignCenter;
+        justify-content: space-around;
+        overflow: hidden;
+
+        p {
+          position: absolute;
+        }
+
+        h2 {
+          height: 15%;
+          margin-bottom: 80%;
+        }
+      }
+
       &:hover {
         .infoBox h2 {
           transform: translateY(20px);
@@ -189,10 +207,11 @@
       transform: rotateY(180deg);
       .infoBox {
         overflow-y: scroll;
+        display: block;
         h2 {
+          height: 0;
           opacity: 0;
           transition: opacity 500ms;
-          display: none;
         }
         p {
           transition: opacity 500ms;
@@ -276,48 +295,97 @@
         }
       }
       .symptomsInfo {
+        position: relative;
         width: 50%;
         height: 100%;
         @include alignCenter;
         flex-direction: column;
-        justify-content: space-evenly;
 
-        > * {
-          margin: 0px 10%;
-        }
-
-        h1 {
-          font-weight: bolder;
-          color: #642b73;
-          font-size: 2rem;
-        }
-
-        p {
-          font-size: 1.2rem;
-        }
-
-        .imgContainer {
+        .headerColors {
           position: relative;
-          width: 170px;
-          height: 170px;
+          width: 100%;
+          height: 15%;
           @include alignCenter;
-          border-radius: 50%;
-          background: #642b73; /* fallback for old browsers */
-          background: -webkit-linear-gradient(
-            to top,
-            #c6426e,
-            #642b73
-          ); /* Chrome 10-25, Safari 5.1-6 */
-          background: linear-gradient(
-            to top,
-            #c6426e,
-            #642b73
-          ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          flex-direction: row;
+          justify-content: space-around;
+          border-bottom: 2px solid #c6426e;
 
-          svg {
-            fill: white;
-            width: 70%;
-            height: 70%;
+          .box {
+            position: relative;
+            width: 25%;
+            height: 100%;
+            @include alignCenter;
+            flex-direction: row;
+            justify-content: space-around;
+
+            .ball {
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+            }
+            p {
+              width: 70%;
+              color: #642b73;
+              font-weight: bolder;
+            }
+          }
+        }
+
+        .symptomsDataBox {
+          position: relative;
+          width: 100%;
+          height: 85%;
+          @include alignCenter;
+          flex-direction: column;
+          justify-content: space-evenly;
+
+          > * {
+            margin: 0px 10%;
+          }
+
+          h1 {
+            font-weight: bolder;
+            padding: 0px 10%;
+            color: #642b73;
+            font-size: 2rem;
+            text-align: center;
+          }
+
+          p {
+            font-size: 1.2rem;
+          }
+
+          .imgContainer {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            @include alignCenter;
+            background: #642b73; /* fallback for old browsers */
+            background: -webkit-linear-gradient(
+              to top,
+              #c6426e,
+              #642b73
+            ); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(
+              to top,
+              #c6426e,
+              #642b73
+            ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          .colorBallShifter {
+            top: 12%;
+            left: 20px;
+            width: 25px;
+            height: 25px;
+            border: 2px solid #c6426e;
+            border-radius: 50%;
+            position: absolute;
           }
         }
       }
@@ -329,21 +397,44 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  background: lightblue;
   @include alignCenter;
   flex-direction: column;
-  justify-content: flex-start;
-  background: #642b73; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #c6426e,
-    #642b73
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #c6426e,
-    #642b73
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  justify-content: space-around;
+  background: white;
+
+  .returnButton {
+    z-index: 5;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 20px;
+    left: 30px;
+    @include alignCenter;
+    transform: rotate(-180deg);
+    border-radius: 50%;
+    border-right: 5px solid #642b73;
+    border-left: 5px solid #642b73;
+    border-top: 5px solid #c6426e;
+    border-bottom: 5px solid #c6426e;
+    cursor: pointer;
+    transition: background-color 500ms;
+
+    svg {
+      width: 70%;
+      height: 70%;
+      transition: fill 500ms;
+    }
+
+    &:hover {
+      transition: background-color 500ms;
+      background-color: hsla(288, 46%, 31%, 0.4);
+
+      svg {
+        transition: fill 500ms;
+        fill: white;
+      }
+    }
+  }
 
   .titlesBox {
     position: relative;
@@ -358,26 +449,39 @@
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: bolder;
       background-color: rgba(255, 255, 255, 0.4);
       border-radius: 20px;
-      width: 50%;
-      height: 30%;
+      padding: 5px 20px;
       @include alignCenter;
       text-align: center;
+      background: #642b73; /* fallback for old browsers */
+      background: -webkit-linear-gradient(
+        to right,
+        #c6426e,
+        #642b73
+      ); /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(
+        to right,
+        #c6426e,
+        #642b73
+      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     }
     p {
       width: 90%;
       font-size: 1.1rem;
+      color: #642b73;
+      font-weight: bolder;
     }
   }
 
   .sectionsBox {
     position: relative;
     width: 90%;
-    height: 70%;
+    height: 60%;
     overflow: scroll;
+    // border: 5px solid black;
 
     .drawer {
       position: relative;
@@ -390,6 +494,19 @@
       background-color: rgba(255, 255, 255, 0.2);
       border-radius: 10px;
       margin: 1px 0px;
+      transition: all 500ms;
+
+      background: #642b73; /* fallback for old browsers */
+      background: -webkit-linear-gradient(
+        to right,
+        #c6426e,
+        #642b73
+      ); /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(
+        to right,
+        #c6426e,
+        #642b73
+      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
       > * {
         width: 100%;
@@ -398,9 +515,13 @@
 
       .headerBox {
         @include alignCenter;
+        top: 0;
+        left: 0;
+        position: absolute;
         flex-direction: row;
         justify-content: space-between;
         cursor: pointer;
+        transition: height 500ms;
 
         > * {
           margin: 0px 50px;
@@ -409,35 +530,43 @@
         h1 {
           color: white;
           font-weight: bolder;
+          font-size: 1.2rem;
         }
 
         .svgBox {
           position: relative;
           width: 30px;
           height: 30px;
+          transition: transform 500ms;
 
           svg {
             width: 100%;
             height: 100%;
+            fill: white;
           }
         }
       }
 
       .contentBox {
-        // @include alignCenter;
-        // flex-direction: column;
-        // justify-content: space-around;
+        position: relative;
+        margin-top: 100px;
         overflow: hidden;
-        // background-color: lightblue;
         height: calc(100% - 100px);
         overflow: scroll;
+        transition: opacity 500ms, height 250ms;
 
-        p {
+        p,
+        li {
           width: 90%;
-          // height: 250px;
+          font-weight: 600;
           color: white;
+          margin: 15px auto;
+        }
+
+        ul {
+          width: 90%;
           margin: 0px auto;
-          // border: 5px solid lightcoral;
+          // background-color: black;
         }
 
         .visualsBox {
