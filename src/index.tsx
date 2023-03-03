@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import "./styles/css/index.css";
+import "./styles/css/index.min.css";
 import { BrowserRouter } from "react-router-dom";
 import { ContextProvider } from "./data/context";
 import { ChakraProvider } from "@chakra-ui/react";

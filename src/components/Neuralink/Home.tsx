@@ -36,19 +36,25 @@ const NeuralinkHome: React.FC<props> = ({ history }) => {
   return (
     <section id="NeuralinkHome">
       <div className="RightBox">
-        <h1>Elalink</h1>
+        <h1>Algoritmo</h1>
+        <p style={{ textAlign: "center", color: "white" }}>
+          Contesta las siguientes preguntas que duraran menos de 2 min para
+          ayudarnos a saber un poco más acerca de ti
+        </p>
         <div className="buttonContainer">
-          <a href="#InfoBlock1">
+          {/* <a href="#InfoBlock1">
             <Button colorScheme="whiteAlpha" size="lg">
               ELA - Esclerosis Lateral Amiotrófica
             </Button>
-          </a>
+          </a> */}
+
           <Button
-            onClick={() => history.push("/Neuralink/RetosCuidador")}
+            // onClick={() => history.push("/Neuralink/RetosCuidador")}
             colorScheme="whiteAlpha"
             size="lg"
+            style={{ height: "100px" }}
           >
-            Retos para el cuidador
+            Empezar el Cuestionario
           </Button>
         </div>
       </div>

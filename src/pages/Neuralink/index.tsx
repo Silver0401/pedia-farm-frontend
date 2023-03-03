@@ -8,10 +8,6 @@ const NeuralinkPage: React.FC = (props: any) => {
   return (
     <div className="NeuralinkPage">
       <NeuralinkHome history={props.history} />
-
-      <InfoBlock1 />
-
-      <InfoBlock2 />
     </div>
   );
 };
