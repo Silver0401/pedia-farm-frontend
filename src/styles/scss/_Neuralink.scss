@@ -2,102 +2,99 @@
   position: absolute;
   width: 100vw;
   height: 100vh;
-  // border: 10px solid lightskyblue;
   overflow-y: scroll;
   scroll-behavior: smooth;
   @include hideScrollBar;
   background-color: white;
 
-  section {
+  #NeuralinkHome {
     position: relative;
     width: 100%;
     height: 100%;
-    // border: 5px solid lightgrey;
-  }
-
-  #NeuralinkHome {
-    position: relative;
-    // @include alignCenter;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    // align-items: stretch;
-    // align-items: stretch;
-    // flex-direction: row-reverse;
+    @include alignCenter;
     border: 10px solid white;
     border-radius: 40px;
-    background: #642b73; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-      to right,
-      #c6426e,
-      #642b73
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-      to right,
-      #c6426e,
-      #642b73
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    overflow: hidden;
 
-    .RightBox,
-    .LeftBox {
-      // width: 50%;
-      // height: 100%;
-      position: relative;
-      // width: 50%;
-      @include alignCenter;
-      flex-basis: 500px;
-    }
+    .GenericContainer {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      z-index: 1;
+      background: #642b73; /* fallback for old browsers */
+      background: -webkit-linear-gradient(
+        to right,
+        #c6426e,
+        #642b73
+      ); /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(
+        to right,
+        #c6426e,
+        #642b73
+      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-    .RightBox {
-      flex-direction: column;
-      justify-content: space-evenly;
-      align-items: center;
-
-      h1 {
-        color: white;
-        font-size: 8vw;
-        font-weight: bolder;
-        text-decoration: underline 1px white;
-        margin: 0;
-      }
-
-      p {
-        font-size: clamp(15px, 4vw, 30px);
-      }
-
-      .buttonContainer {
-        @include alignCenter;
-        flex-direction: column;
-        justify-content: space-around;
-        width: 90%;
-        height: 40%;
-
-        // button {
-        //   color: black;
-        // }
-      }
-    }
-    .LeftBox {
-      .lottieContainer {
+      .RightBox,
+      .LeftBox {
         position: relative;
-        width: clamp(300px, 40vw, 600px);
-        height: clamp(300px, 40vw, 600px);
-        background: rgba(255, 255, 255, 0.8);
-        border-radius: 50%;
-        // backdrop-filter: blur(10px);
+        @include alignCenter;
+        flex-basis: 500px;
+      }
 
-        svg {
-          top: 0;
-          left: 0;
-          position: absolute;
+      .RightBox {
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
 
-          g {
-            overflow: visible;
-            width: 700px;
-            height: 700px;
+        h1 {
+          color: white;
+          font-size: 6vw;
+          font-weight: bolder;
+          margin: 0px;
+          text-align: center;
+        }
 
-            path {
-              transform: scale(1.45);
+        p {
+          font-size: clamp(15px, 4vw, 30px);
+          text-align: center;
+          color: white;
+          margin: 0px 5%;
+        }
+
+        .buttonContainer {
+          @include alignCenter;
+          flex-direction: column;
+          justify-content: space-around;
+          width: 90%;
+          font-weight: bolder;
+        }
+      }
+      .LeftBox {
+        .lottieContainer {
+          position: relative;
+          width: clamp(300px, 40vw, 600px);
+          height: clamp(300px, 40vw, 600px);
+          background: rgba(255, 255, 255, 70%);
+          border: 2px solid white;
+          box-shadow: 0px 0px 10px white;
+          border-radius: 50%;
+          // backdrop-filter: blur(10px);
+
+          svg {
+            top: 0;
+            left: 0;
+            position: absolute;
+
+            g {
+              overflow: visible;
+              width: 700px;
+              height: 700px;
+
+              path {
+                transform: scale(1.45);
+              }
             }
           }
         }
@@ -640,6 +637,138 @@
         opacity: 0;
         height: 0;
       }
+    }
+  }
+}
+
+#GenericQuestion {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  z-index: 0;
+  position: absolute;
+  opacity: 1;
+  justify-content: space-around;
+  align-items: center;
+
+  background: #642b73; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #c6426e,
+    #642b73
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #c6426e,
+    #642b73
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  .TopReturnButton {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .questionContainer,
+  .animationContainer {
+    flex-basis: 500px;
+    width: 50%;
+    height: 100%;
+    @include alignCenter;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    h2 {
+      font-size: clamp(1.5rem, 5vw, 3rem);
+      padding: 0px 5%;
+      color: white;
+      font-weight: bolder;
+      text-align: center;
+    }
+
+    .yesNoButtons {
+      width: 90%;
+      @include alignCenter;
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      button {
+        border: 2px solid white;
+        box-shadow: 0px 0px 10px white;
+        padding: 30px 50px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      width: 100%;
+      height: 50%;
+    }
+  }
+
+  .animationContainer {
+    position: relative;
+    @include alignCenter;
+
+    .animationInnerContainer {
+      position: relative;
+      @include alignCenter;
+      width: clamp(300px, 40vw, 500px);
+      height: clamp(300px, 40vw, 500px);
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 40%);
+      border: 1px solid white;
+      box-shadow: 0px 0px 15px white;
+    }
+  }
+}
+
+#Recomendations {
+  width: 100%;
+  height: 100%;
+  @include alignCenter;
+  flex-direction: column;
+  background: #642b73; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #c6426e,
+    #642b73
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #c6426e,
+    #642b73
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  h1 {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  ul {
+    position: relative;
+    width: 80%;
+    height: 60%;
+    overflow-y: scroll;
+    margin-top: 50px;
+
+    li {
+      text-align: center;
+      position: relative;
+      width: 100%;
+      color: black;
+      font-weight: bolder;
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      padding: 20px 0px;
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 40%);
+      border: 1px solid white;
+      font-weight: bolder;
     }
   }
 }
