@@ -10,6 +10,12 @@ import brainAnimation from "../../assets/brain.json";
 import heart from "../../assets/Lotties/heart.json";
 import exercise from "../../assets/Lotties/exercise.json";
 import sleep from "../../assets/Lotties/sleep.json";
+import blood from "../../assets/Lotties/blood.json";
+import blood2 from "../../assets/Lotties/blood2.json";
+import meds from "../../assets/Lotties/meds.json";
+import smoke from "../../assets/Lotties/smoke.json";
+import weight from "../../assets/Lotties/weight.json";
+import hipertension from "../../assets/Lotties/hipertension.json";
 
 interface GenericQuestionProps {
   lottie: any;
@@ -45,28 +51,31 @@ const LottieAnimation = () => {
 const NeuralinkHome: React.FC = () => {
   const InitList: GenericQuestionProps[] = [
     {
-      lottie: heart,
-      question: "¿Padece usted de Hipertensión?",
+      lottie: hipertension,
+      question: "¿Padece usted de presión alta?",
       answer: "awaiting",
       category: "hipertension",
+      answerForRecomendation: "yes",
+      recomendation:
+        "El Paciente menciona tener hipertension, se recomienda: \n-Calcular IMC (Controlar peso) \n-Ejercicio: Adultos a la semana por lo menos 2 horas y 30 min (es decir 30 min por 5 días a un nivel moderado- intenso), y en adolescentes 1 hora diaria \n -Evitar fumar y tomar alcohol (hombres deberán de tomar menos de 2 copas diarias y mujeres 1) \n -Dieta DASH",
     },
     {
-      lottie: heart,
-      question: "¿Toma usted medicamentos para dicha Hipertensión?",
+      lottie: meds,
+      question: "¿Toma usted medicamentos para dicha presión alta?",
       answer: "awaiting",
       category: "hipertension",
       answerForRecomendation: "no",
       recomendation:
-        "El paciente no toma medicamentos para la hipertensión. Se recomienda empezar con un tratamiento farmacológico con el objetivo de estabilizar la presión sistólica del paciente por debajo de 140/90 mmHg. Utilizar medicamentos como: Hidroclorotiazida, Enalapril, Captopril o Clortalidona",
+        "El paciente no toma medicamentos para la hipertensión, se recomienda:  \n-Empezar con un tratamiento farmacológico con el objetivo de estabilizar la presión sistólica del paciente por debajo de 140/90 mmHg \n-Utilizar medicamentos como: \nHidroclorotiazida \nEnalapril \nCaptopril \nClortalidona",
     },
     {
-      lottie: sleep,
-      question: "¿Con estos medicamentos se siente mejor?",
+      lottie: smoke,
+      question: "¿Usted fuma Tabaco?",
       answer: "awaiting",
-      category: "hipertension",
-      answerForRecomendation: "no",
+      category: "smoking",
+      answerForRecomendation: "yes",
       recomendation:
-        "Los medicamentos que toma el paciente para su hipertensión podrían no estar teniendo el efecto deseado. Se recomienda analizar el esquema de tratamiento recetado, evaluar su factibilidad y en caso de ser necesario modificarlo.",
+        "El paciente menciona fumar tabaco. Promover el cese del tabaquismo (usar las 5 A’s de la US Preventive Services Task Force (USPSTF)) \n -Ask about smoking habits \n -Advise to quit \n-Assess willingness to quit \n-Assist in quitting \n-Arrange follow-up and support. \nLas intervenciones conductuales que resultaron eficaces para ayudar a los adultos a dejar de fumar incluyen asesoramiento en persona, asesoramiento telefónico y materiales de autoayuda. Estas intervenciones pueden aumentar las tasas de abandono del hábito de fumar desde un valor inicial del 5 % al 11 % en los grupos de control al 7 % al 13 % en los grupos de intervención. \nLas intervenciones de farmacoterapia aprobadas por la FDA para el tratamiento de la dependencia del tabaco en adultos incluyen bupropion SR, vareniclina y NRT (terapia de reemplazo de nicotina)",
     },
     {
       lottie: exercise,
@@ -75,35 +84,100 @@ const NeuralinkHome: React.FC = () => {
       category: "sedentarismo",
       answerForRecomendation: "no",
       recomendation:
-        "El paciente tiene un estilo de vida sedentario. Recomendarle una rutina de ejericio apegada a sus necesidades y posibilidades",
+        "El paciente tiene un estilo de vida sedentario, se recomienda: realizar de 150 a 300 minutos de ejercicio que sea de intensidad moderada o 75-150 minutos de ejercicio de intensidad vigorosa (se puede hacer una combinación de ejercicio aeróbico moderado y vigoroso) a la semana.",
     },
     {
-      lottie: exercise,
+      lottie: weight,
       question: "¿Tiene usted sobrepeso u obesidad?",
       answer: "awaiting",
       category: "obesity",
       answerForRecomendation: "yes",
       recomendation:
-        "El paciente considera tener sobrepeso u obesidad, Se recomienda referir con un nutriólogo para crearle una dieta personalizada",
+        "El paciente considera tener sobrepeso u obesidad, valorar veracidad con mediciones somatométricas y referir con un nutriólogo para crearle una dieta personalizada",
     },
     {
-      lottie: exercise,
+      lottie: meds,
       question: "¿Toma medicamentos para bajar de peso?",
       answer: "awaiting",
       category: "obesity",
       answerForRecomendation: "no",
       recomendation:
-        "El paciente no utiliza medicamentos hipolipemiantes, dependiendo del examen fisico evaluar la posibilidad de recetarle dichos fármacos",
+        "El paciente no utiliza medicamentos hipolipemiantes, dependiendo del examen fisico evaluar la posibilidad de a la par de cambios en la dieta y estilo de vida, recetarle dichos fármacos",
     },
     {
-      lottie: exercise,
-      question: "Se siente mejor tomando estos medicamentos?",
+      lottie: blood,
+      question: "¿Se le ha dicho que tiene el colesterol elevado?",
       answer: "awaiting",
-      category: "obesity",
+      category: "dyslipidemia",
+      answerForRecomendation: "yes",
+      recomendation:
+        "El paciente menciona tener una posible dislipidemia, recomendaciones: Concentraciones de colesterol entre 200 y 300 mg/dl generalmente son generadas por obesidad, fármacos, consumo excesivo de grasas saturadas y/o colesterol, entre otros factores. \n-En personas sin factores de riesgo a partir de los 20 años, se recomiendo realizar tamizaje para dislipidemia con perfil de lípidos: Colesterol total, HDL, LDL y calcular el C- No HDL (Colesterol total - colesterol HDL). \nSospechar de hipercolesterolemia familiar con niveles de C-LDL mayor a 190 mg/dl y al excluir causas secundarias de elevación de C-LDL",
+    },
+    {
+      lottie: meds,
+      question: "¿Toma Medicamentos para controlar el colesterol?",
+      answer: "awaiting",
+      category: "dyslipidemia",
       answerForRecomendation: "no",
       recomendation:
-        "Los fármacos parecen no estar teniendo efectos significativamente positivo en el paciente. Evaluar la utilidad de estos y modificar el esquema farmacológico de ser necesario.",
+        "El paciente no toma medicamentos para dislipidemia se recomienda: Valorar la posibilidad si los rangos de LDL son mayores o igual a 100 mg/dl de iniciar tratamiento farmacológico donde se busque: \nAjustar dosis manteniendo LDL-C < 100 mg/dL \nUsar fármacos como: \nAtorvastatina \nBezafibrato \nPravastatina \nEzetimiba",
     },
+    {
+      lottie: blood2,
+      question: "¿Tiene usted Diabetes?",
+      answer: "awaiting",
+      category: "diabetes",
+      answerForRecomendation: "yes",
+      recomendation:
+        "Recalcar la importancia de mantener una dieta saludable y la realización de actividad \nSe ha demostrado que las dietas ricas en cereales integrales, frutas, verduras, legumbres, frutos secos, moderadas en el consumo de alcohol y bajas en cereales refinados, carnes rojas/procesadas y bebidas azucaradas reducen el riesgo de diabetes y mejoran el control glucémico y los lípidos en sangre de los pacientes con diabetes",
+    },
+    {
+      lottie: meds,
+      question: "¿Toma Medicamentos para la Diabetes?",
+      answer: "awaiting",
+      category: "diabetes",
+      answerForRecomendation: "no",
+      recomendation:
+        "El paciente no toma medicamentos para la diabetes se recomienda: empezar con un tratamiento farmacológico en el cual busquemos como objetivos: \nGlucosa en ayuno: de 70 a 130 mg/dl \nHemoglobina glucosilada (HbA1c) menor al 7% \nGlucosa postprandial (90-120 minutos después de las comidas): menor de 180 mg/dl \nMantener cifras de presión arterial menor a 130/80 mmHg",
+    },
+    {
+      lottie: sleep,
+      question:
+        "¿Tiene problemas durante el sueño? (Ej: roncar o sentir que te ahogas)",
+      answer: "awaiting",
+      category: "saos",
+      answerForRecomendation: "yes",
+      recomendation:
+        "El paciente menciona tener problemas de sueño: Evaluar la posibilidad de que el paciente padezca síndrome de apnea obstructivo del sueño, para esto se recomienda hacer el test de SAOS",
+    },
+
+    {
+      lottie: heart,
+      question: "¿Se le ha diagnosticado algun problema del corazón?",
+      answer: "awaiting",
+      category: "fibrilaiton",
+      answerForRecomendation: "no",
+      recomendation:
+        "El paciente no toma medicamentos para la diabetes se recomienda: empezar con un tratamiento farmacológico en el cual busquemos como objetivos: \nGlucosa en ayuno: de 70 a 130 mg/dl \nHemoglobina glucosilada (HbA1c) menor al 7% \nGlucosa postprandial (90-120 minutos después de las comidas): menor de 180 mg/dl \nMantener cifras de presión arterial menor a 130/80 mmHg",
+    },
+    {
+      lottie: meds,
+      question: "¿Toma Medicamentos para el Corazón?",
+      answer: "awaiting",
+      category: "fibrilaiton",
+      answerForRecomendation: "no",
+      recomendation:
+        "El paciente menciona tener problemas cardiacos y no toma medicamentos, se recomienda: Evaluar la posibilidad de fibrilación auricular (u otras arritmias) no valvular, paroxística o permanente. \nEn caso de confirmar, se busca como objetivos: \nMantener un INR de 2.5 (rango entre 2.0 – 3.0) \n Usar fármacos como: \n-Antagonistas de la vitamina K \n-Apixaban \n-Dabigatran  \n-Rivaroxaban",
+    },
+    // {
+    //   lottie: exercise,
+    //   question: "Se siente mejor tomando estos medicamentos?",
+    //   answer: "awaiting",
+    //   category: "obesity",
+    //   answerForRecomendation: "no",
+    //   recomendation:
+    //     "Los fármacos parecen no estar teniendo efectos significativamente positivo en el paciente. Evaluar la utilidad de estos y modificar el esquema farmacológico de ser necesario.",
+    // },
     // {
     //   lottie: exercise,
     //   question:
@@ -111,55 +185,32 @@ const NeuralinkHome: React.FC = () => {
     //   answer: "awaiting",
     //   category: "saos",
     // },
-    {
-      lottie: exercise,
-      question:
-        "¿Se le ha diagnósticado el síndrome de apnea obstructiva del sueño?",
-      answer: "awaiting",
-      category: "saos",
-    },
-    {
-      lottie: exercise,
-      question: "¿La han dado algun tratamiento para su apnea del sueño?",
-      answer: "awaiting",
-      category: "saos",
-      answerForRecomendation: "no",
-      recomendation:
-        "El paciente menciona tener SAOS sin tratamiento, verificar veracidad y severidad para recomendar un posible tratamiento",
-    },
-    {
-      lottie: exercise,
-      question: "¿Tiene usted Diabetes?",
-      answer: "awaiting",
-      category: "diabetes",
-    },
-    {
-      lottie: exercise,
-      question: "¿Toma Medicamentos para la Diabetes?",
-      answer: "awaiting",
-      category: "diabetes",
-      answerForRecomendation: "no",
-      recomendation:
-        "El paciente no toma medicamentos para la diabetes. Se recomienda empezar con un tratamiento farmacológico",
-    },
-    {
-      lottie: exercise,
-      question: "¿Se siente mejor con dichos medicamentos?",
-      answer: "awaiting",
-      category: "diabetes",
-      answerForRecomendation: "no",
-      recomendation:
-        "Posibilidad de tratamiento diabético ineficaz, analizar y evaluar la posibilidad de un cambio del esquema farmacológico del paciente, buscando obtener: Una glucosa en ayuno estable de 70 a 130mg/dl, Hemoglobina glucosilada menor a 1%, glucosa postpandrial menor de 180 mg/dl y mantener su presión arterial en menos de 130/80 mmHg",
-    },
-    {
-      lottie: exercise,
-      question: "¿Usted fuma Tabaco?",
-      answer: "awaiting",
-      category: "smoking",
-      answerForRecomendation: "yes",
-      recomendation:
-        "Es importante diseñar una estrategia personalizada para el paciente con el objetivo de que este deje de fumar o se reduzca el consumo de Tabaco.",
-    },
+    // {
+    //   lottie: exercise,
+    //   question:
+    //     "¿Se le ha diagnósticado el síndrome de apnea obstructiva del sueño?",
+    //   answer: "awaiting",
+    //   category: "saos",
+    // },
+    // {
+    //   lottie: exercise,
+    //   question: "¿La han dado algun tratamiento para su apnea del sueño?",
+    //   answer: "awaiting",
+    //   category: "saos",
+    //   answerForRecomendation: "no",
+    //   recomendation:
+    //     "El paciente menciona tener SAOS sin tratamiento, verificar veracidad y severidad para recomendar un posible tratamiento",
+    // },
+
+    // {
+    //   lottie: exercise,
+    //   question: "¿Se siente mejor con dichos medicamentos?",
+    //   answer: "awaiting",
+    //   category: "diabetes",
+    //   answerForRecomendation: "no",
+    //   recomendation:
+    //     "Posibilidad de tratamiento diabético ineficaz, analizar y evaluar la posibilidad de un cambio del esquema farmacológico del paciente, buscando obtener: Una glucosa en ayuno estable de 70 a 130mg/dl, Hemoglobina glucosilada menor a 1%, glucosa postpandrial menor de 180 mg/dl y mantener su presión arterial en menos de 130/80 mmHg",
+    // },
   ];
 
   const [questionSelected, setQuestionSelected] = useState<number>(0);
@@ -307,13 +358,7 @@ const NeuralinkHome: React.FC = () => {
     if (questionSelected !== 0) {
       if (
         GenericQuestionsList[questionSelected - 1].question ===
-        "¿Padece usted de Hipertensión?"
-      ) {
-        HandleRouteToFollowOfQuestion(questionSelected - 1, "no");
-      }
-      if (
-        GenericQuestionsList[questionSelected - 1].question ===
-        "¿Toma usted medicamentos para dicha Hipertensión?"
+        "¿Padece usted de presión alta?"
       ) {
         HandleRouteToFollowOfQuestion(questionSelected - 1, "no");
       }
@@ -325,19 +370,7 @@ const NeuralinkHome: React.FC = () => {
       }
       if (
         GenericQuestionsList[questionSelected - 1].question ===
-        "¿Toma medicamentos para bajar de peso?"
-      ) {
-        HandleRouteToFollowOfQuestion(questionSelected - 1, "no");
-      }
-      if (
-        GenericQuestionsList[questionSelected - 1].question ===
-        "¿Se le ha diagnósticado el síndrome de apnea obstructiva del sueño?"
-      ) {
-        HandleRouteToFollowOfQuestion(questionSelected - 1, "no");
-      }
-      if (
-        GenericQuestionsList[questionSelected - 1].question ===
-        "¿La han dado algun tratamiento para su apnea del sueño?"
+        "¿Se le ha dicho que tiene el colesterol elevado?"
       ) {
         HandleRouteToFollowOfQuestion(questionSelected - 1, "no");
       }
@@ -349,10 +382,40 @@ const NeuralinkHome: React.FC = () => {
       }
       if (
         GenericQuestionsList[questionSelected - 1].question ===
-        "¿Toma Medicamentos para la Diabetes?"
+        "¿Se le ha diagnosticado algun problema del corazón?"
       ) {
         HandleRouteToFollowOfQuestion(questionSelected - 1, "no");
       }
+      // if (
+      //   GenericQuestionsList[questionSelected - 1].question ===
+      //   "¿Toma medicamentos para bajar de peso?"
+      // ) {
+      //   HandleRouteToFollowOfQuestion(questionSelected - 1, "no");
+      // }
+      // if (
+      //   GenericQuestionsList[questionSelected - 1].question ===
+      //   "¿Se le ha diagnósticado el síndrome de apnea obstructiva del sueño?"
+      // ) {
+      //   HandleRouteToFollowOfQuestion(questionSelected - 1, "no");
+      // }
+      // if (
+      //   GenericQuestionsList[questionSelected - 1].question ===
+      //   "¿La han dado algun tratamiento para su apnea del sueño?"
+      // ) {
+      //   HandleRouteToFollowOfQuestion(questionSelected - 1, "no");
+      // }
+      // if (
+      //   GenericQuestionsList[questionSelected - 1].question ===
+      //   "¿Tiene usted Diabetes?"
+      // ) {
+      //   HandleRouteToFollowOfQuestion(questionSelected - 1, "no");
+      // }
+      // if (
+      //   GenericQuestionsList[questionSelected - 1].question ===
+      //   "¿Toma Medicamentos para la Diabetes?"
+      // ) {
+      //   HandleRouteToFollowOfQuestion(questionSelected - 1, "no");
+      // }
     }
   }, [questionSelected]);
 
