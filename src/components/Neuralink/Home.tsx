@@ -16,24 +16,11 @@ import meds from "../../assets/Lotties/meds.json";
 import smoke from "../../assets/Lotties/smoke.json";
 import weight from "../../assets/Lotties/weight.json";
 import hipertension from "../../assets/Lotties/hipertension.json";
+import age from "../../assets/Lotties/age.json";
+import gender from "../../assets/Lotties/gender.json";
+import ethnicity from "../../assets/Lotties/ethnicity.json";
 
-interface GenericQuestionProps {
-  lottie: any;
-  question: string;
-  answerForRecomendation?: "yes" | "no";
-  recomendation?: string;
-  answer: "yes" | "no" | "awaiting";
-  category:
-    | "hipertension"
-    | "smoking"
-    | "sedentarismo"
-    | "obesity"
-    | "dyslipidemia"
-    | "saos"
-    | "diabetes"
-    | "atherosclerosis"
-    | "fibrilaiton";
-}
+import { GenericQuestionProps } from "./types";
 
 const LottieAnimation = () => {
   const FrameTime: AnimationSegment = [0, 90];
@@ -156,9 +143,6 @@ const NeuralinkHome: React.FC = () => {
       question: "¿Se le ha diagnosticado algun problema del corazón?",
       answer: "awaiting",
       category: "fibrilaiton",
-      answerForRecomendation: "no",
-      recomendation:
-        "El paciente no toma medicamentos para la diabetes se recomienda: empezar con un tratamiento farmacológico en el cual busquemos como objetivos: \nGlucosa en ayuno: de 70 a 130 mg/dl \nHemoglobina glucosilada (HbA1c) menor al 7% \nGlucosa postprandial (90-120 minutos después de las comidas): menor de 180 mg/dl \nMantener cifras de presión arterial menor a 130/80 mmHg",
     },
     {
       lottie: meds,
@@ -169,48 +153,32 @@ const NeuralinkHome: React.FC = () => {
       recomendation:
         "El paciente menciona tener problemas cardiacos y no toma medicamentos, se recomienda: Evaluar la posibilidad de fibrilación auricular (u otras arritmias) no valvular, paroxística o permanente. \nEn caso de confirmar, se busca como objetivos: \nMantener un INR de 2.5 (rango entre 2.0 – 3.0) \n Usar fármacos como: \n-Antagonistas de la vitamina K \n-Apixaban \n-Dabigatran  \n-Rivaroxaban",
     },
-    // {
-    //   lottie: exercise,
-    //   question: "Se siente mejor tomando estos medicamentos?",
-    //   answer: "awaiting",
-    //   category: "obesity",
-    //   answerForRecomendation: "no",
-    //   recomendation:
-    //     "Los fármacos parecen no estar teniendo efectos significativamente positivo en el paciente. Evaluar la utilidad de estos y modificar el esquema farmacológico de ser necesario.",
-    // },
-    // {
-    //   lottie: exercise,
-    //   question:
-    //     "¿Le han mencionado sus parientes que ronca al dormir o usted tiene problemas para dormir?",
-    //   answer: "awaiting",
-    //   category: "saos",
-    // },
-    // {
-    //   lottie: exercise,
-    //   question:
-    //     "¿Se le ha diagnósticado el síndrome de apnea obstructiva del sueño?",
-    //   answer: "awaiting",
-    //   category: "saos",
-    // },
-    // {
-    //   lottie: exercise,
-    //   question: "¿La han dado algun tratamiento para su apnea del sueño?",
-    //   answer: "awaiting",
-    //   category: "saos",
-    //   answerForRecomendation: "no",
-    //   recomendation:
-    //     "El paciente menciona tener SAOS sin tratamiento, verificar veracidad y severidad para recomendar un posible tratamiento",
-    // },
-
-    // {
-    //   lottie: exercise,
-    //   question: "¿Se siente mejor con dichos medicamentos?",
-    //   answer: "awaiting",
-    //   category: "diabetes",
-    //   answerForRecomendation: "no",
-    //   recomendation:
-    //     "Posibilidad de tratamiento diabético ineficaz, analizar y evaluar la posibilidad de un cambio del esquema farmacológico del paciente, buscando obtener: Una glucosa en ayuno estable de 70 a 130mg/dl, Hemoglobina glucosilada menor a 1%, glucosa postpandrial menor de 180 mg/dl y mantener su presión arterial en menos de 130/80 mmHg",
-    // },
+    {
+      lottie: gender,
+      question: "¿Es usted un hombre?",
+      answer: "awaiting",
+      category: "gender",
+      answerForRecomendation: "yes",
+      recomendation: "El paciente es hombre: Riesgo de EVC mayor en hombres",
+    },
+    {
+      lottie: age,
+      question: "¿Tiene usted más de 55 años?",
+      answer: "awaiting",
+      category: "age",
+      answerForRecomendation: "yes",
+      recomendation:
+        "El paciente tiene más de 55 años: Riesgo de EVC se duplica aproximadamente cada 10 años a partir de los 55 años.",
+    },
+    {
+      lottie: ethnicity,
+      question: "¿Es usted de etnicidad afroamericana o hispanoamericana?",
+      answer: "awaiting",
+      category: "ethnicity",
+      answerForRecomendation: "yes",
+      recomendation:
+        "El paciente es de etnicidad afroamericana: Riesgo de EVC mayor en Afroamericanos e hispanoamericano",
+    },
   ];
 
   const [questionSelected, setQuestionSelected] = useState<number>(0);
@@ -337,22 +305,23 @@ const NeuralinkHome: React.FC = () => {
           console.log("removedList", removedList);
           return removedList;
         });
-      } else {
-        const restoredList = InitList.map((question) => {
-          let newList = question;
-
-          GenericQuestionsList.forEach((question2) => {
-            if (question.question === question2.question) {
-              newList.answer = question2.answer;
-            }
-          });
-
-          return newList;
-        });
-
-        console.log("restoredList", restoredList);
-        setGenericQuestionsList(restoredList);
       }
+      // else {
+      //   const restoredList = InitList.map((question) => {
+      //     let newList = question;
+
+      //     GenericQuestionsList.forEach((question2) => {
+      //       if (question.question === question2.question) {
+      //         newList.answer = question2.answer;
+      //       }
+      //     });
+
+      //     return newList;
+      //   });
+
+      //   console.log("restoredList", restoredList);
+      //   setGenericQuestionsList(restoredList);
+      // }
     };
 
     if (questionSelected !== 0) {

@@ -3,6 +3,7 @@ import { useLottie, LottieOptions } from "lottie-react";
 
 // Lotties
 import { Button } from "@chakra-ui/button";
+import { categories } from "./types";
 
 interface GenericQuestionProps {
   lottie: any;
@@ -20,16 +21,7 @@ interface GenericQuestionListProps {
   answer: "yes" | "no" | "awaiting";
   answerForRecomendation?: "yes" | "no";
   recomendation?: string;
-  category:
-    | "hipertension"
-    | "smoking"
-    | "sedentarismo"
-    | "obesity"
-    | "dyslipidemia"
-    | "saos"
-    | "diabetes"
-    | "atherosclerosis"
-    | "fibrilaiton";
+  category: categories;
 }
 
 interface LottieAnimationProps {
